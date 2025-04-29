@@ -286,18 +286,18 @@ body {
 @keyframes fadeInSlideUp {
   0% {
     opacity: 0;
-    transform: translateY(20px); 
+    transform: translateY(20px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0); 
+    transform: translateY(0);
   }
 }
 
 /* Class for footer that will be applied when scrolling */
 .footer-animate {
   animation: fadeInSlideUp 1s ease-out forwards;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Footer styles */
@@ -307,11 +307,11 @@ body {
   font-size: 14px;
   transition: box-shadow 0.3s ease-in-out;
 }
-.footer-bottom-container{
+.footer-bottom-container {
   width: 100%;
   background-color: #3c3c3c;
 }
-.footer-bottom{
+.footer-bottom {
   width: 100%;
   color: #ffffff;
   padding: 20px 0;
@@ -368,10 +368,10 @@ body {
 }
 
 .footer-links a:hover {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
-.footer-content-section{
+.footer-content-section {
   padding: 40px 0;
 }
 
@@ -387,19 +387,19 @@ body {
 .footer-bottom-links li {
   color: #ffffff;
   font-size: 14px;
-  position: relative; 
+  position: relative;
 }
 
 .footer-bottom-links a {
   color: #aaa;
   text-decoration: none;
   transition: color 0.5s ease;
-  padding-bottom: 4px; 
-  display: inline-block; 
+  padding-bottom: 4px;
+  display: inline-block;
 }
 
 .footer-bottom-links li::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -419,31 +419,219 @@ body {
   color: #00aced;
 }
 
-.contact-footer-info-container{
+.contact-footer-info-container {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.footer-contact-info-box{
+.footer-contact-info-box {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 4px;
 }
-.footer-contact-info-box p{
- color: #aaa;
+.footer-contact-info-box p {
+  color: #aaa;
   font-size: 14px;
   margin-bottom: 0px;
   transition: all 0.5s ease;
 }
-.footer-contact-info-box h6{
- color: #FFFFFF;
+.footer-contact-info-box h6 {
+  color: #ffffff;
   font-size: 14px;
   font-weight: 500;
   margin-bottom: 0px;
   transition: all 0.5s ease;
 }
 
-/**************************** Navbar design End *************************/
+/**************************** Footer design End *************************/
+
+/**************************** Performance design Start *************************/
+
+.video-section-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 20px;
+}
+.video-section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.video-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+.video-play-button {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  display: grid;
+  place-content: center;
+}
+.performance-content-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  gap: 10px;
+  background-color: #00152408;
+  border: 1px solid #00152420;
+}
+.performance-content-box h6 {
+  color: #1d3557;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0px;
+}
+.performance-content-box p {
+  text-align: center;
+  color: #1d3557;
+  font-size: 14px;
+  margin-bottom: 0px;
+}
+.performance-icons {
+  color: #1d3557;
+  font-size: 2.5rem;
+}
+.performance-video-icons {
+  color: #ffffff;
+  font-size: 2.5rem;
+}
+
+/**************************** Performance design End *************************/
+
+/**************************** Who we are design start *************************/
+
+.we-are-section {
+  background-color: #00152410;
+  padding: 40px 0px;
+  margin-bottom: 20px;
+}
+.we-are-left {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+.we-are-left > h6 {
+  color: #001524;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  display: inline-block;
+  position: relative;
+}
+.we-are-left h6::after {
+  content: "";
+  width: 100px;
+  height: 2px;
+  border-radius: 20px;
+  background-color: #001524;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 100%;
+  margin-left: 10px;
+}
+.we-are-left > h2 {
+  color: #001524;
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 0px;
+  line-height: 40px;
+}
+.we-are-left > p {
+  color: #001524;
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 0px;
+  line-height: 25px;
+}
+.we-are-left p span {
+  font-weight: 600;
+}
+.we-are-right {
+  width: 100%;
+  height: 100%;
+}
+.we-are-back-image-section {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background-image: url("../src/assets/images/we-are-back.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+.we-are-back-right-content-box {
+  background-color: #001524;
+  width: 100%;
+  height: 30%;
+  display: flex;
+  padding: 10px 20px;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.we-are-back-right-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+}
+.we-are-back-right-content h4 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0px;
+}
+.we-are-back-right-content p {
+  color: #ffffff;
+  font-size: 14px;
+  margin-bottom: 0px;
+}
+.divider {
+  width: 1px;
+  height: 100%;
+  background-color: #d9d9d9;
+}
+.we-are-left-content-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 20px;
+}
+.we-are-left-content-box {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.we-are-left-content-box h6{
+ color: #001524;
+ font-size: 16px;
+ font-weight: 600;
+ margin-bottom: 0px;
+}
+.we-are-left-content-box p{
+ color: #001524;
+ font-size: 14px;
+ margin-bottom: 0px;
+}
+
+/**************************** Who we are design End *************************/

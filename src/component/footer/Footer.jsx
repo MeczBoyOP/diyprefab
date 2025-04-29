@@ -5,35 +5,8 @@ import { Link } from 'react-router-dom';
 import ImagePath from '../../assets/ImagePath';
 
 const Footer = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  const handleIntersection = (entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        setIsVisible(true);
-        observer.unobserve(entry.target);
-      }
-    });
-  };
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(handleIntersection, {
-      threshold: 0.5,
-    });
-
-    const footerElement = document.getElementById('footer');
-    if (footerElement) {
-      observer.observe(footerElement);
-    }
-
-    return () => {
-      if (footerElement) {
-        observer.unobserve(footerElement);
-      }
-    };
-  }, []);
   return (
-    <footer id="footer" className={`footer-section ${isVisible ? 'footer-animate' : ''}`}>
+    <footer className="footer-section">
       <Container>
         <div className="footer-content-section">
           <Row>
