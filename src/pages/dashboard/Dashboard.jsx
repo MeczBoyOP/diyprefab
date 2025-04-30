@@ -1,13 +1,14 @@
 import React from 'react'
 import Footer from '../../component/footer/Footer'
 import NavBarHead from '../../component/navbar/NavBarHead'
-import { Col, Container, Row } from 'reactstrap'
+import { Button, Col, Container, Row } from 'reactstrap'
 import { TbSettingsBolt } from 'react-icons/tb'
-import { IoLogoElectron } from 'react-icons/io5'
+import { IoLogoElectron, IoSettingsOutline } from 'react-icons/io5'
 import ImagePath from '../../assets/ImagePath'
 import { IoIosPlayCircle } from 'react-icons/io'
 import { FaHelmetSafety } from 'react-icons/fa6'
 import { MdSupportAgent } from 'react-icons/md'
+import { GiCargoCrane, GiMineTruck } from 'react-icons/gi'
 
 const Dashboard = () => {
     return (
@@ -49,12 +50,12 @@ const Dashboard = () => {
                                 <div className="we-are-left-content-container">
                                     <div className="we-are-left-content-box">
                                         <FaHelmetSafety className='performance-icons' />
-                                        <h6>Professional Expert</h6>
+                                        <h4>Professional Expert</h4>
                                         <p>Prefab buildings empower professional experts with faster deployment, design flexibility, and cost-effective construction solutions.</p>
                                     </div>
                                     <div className="we-are-left-content-box">
                                         <MdSupportAgent className='performance-icons' />
-                                        <h6>24/7 Premium Support</h6>
+                                        <h4>24/7 Premium Support</h4>
                                         <p>Experience uninterrupted service and peace of mind with 24/7 premium support tailored for your prefab building needs.</p>
                                     </div>
                                 </div>
@@ -82,8 +83,66 @@ const Dashboard = () => {
                 </Container>
             </section>
 
-            <section className="we-do"></section>
-            
+            <section className="we-do-section">
+                <Container>
+                    <div className="we-do-container">
+                        <div className="we-do-box">
+                            <GiMineTruck className='we-do-icons' />
+                            <hr />
+                            <h3>Experience & dependability</h3>
+                            <p>Prefab buildings offer unmatched experience and dependability through consistent quality, faster delivery, and long-term structural reliability.</p>
+                            <Button className='common-btn'>Learn More</Button>
+                        </div>
+                        <div className="we-do-box">
+                            <GiCargoCrane className='we-do-icons' />
+                            <hr />
+                            <h3>Licensing deals & scalability</h3>
+                            <p>Prefab buildings offer a fast, flexible, and scalable solution ideal for streamlined licensing deals and rapid business expansion.</p>
+                            <Button className='common-btn'>Learn More</Button>
+                        </div>
+                        <div className="we-do-box">
+                            <FaHelmetSafety className='we-do-icons' />
+                            <hr />
+                            <h3>Holistic & custom approach</h3>
+                            <p>Prefab buildings offer a holistic and custom approach, blending tailored design with efficient construction to meet unique project needs seamlessly.</p>
+                            <Button className='common-btn'>Learn More</Button>
+                        </div>
+                        <div className="we-do-box">
+                            <IoSettingsOutline className='we-do-icons' />
+                            <hr />
+                            <h3>Development & fabrication</h3>
+                            <p>Prefab building plays a vital role in modern development and fabrication by enabling faster construction, precision engineering, and cost-effective scalability.</p>
+                            <Button className='common-btn'>Learn More</Button>
+                        </div>
+                    </div>
+                </Container>
+            </section>
+
+            <section className="our-vision-mission-section">
+                <Container>
+                    <Row>
+                        <Col md={6}>
+                            <div className="our-vision-container">
+                                <h6>Our Vision</h6>
+                                <hr />
+                                <p>We envision a future where every person, regardless of income or location, has access to strong, sustainable, and customizable buildings.</p>
+                                <p>No middlemen. No delays. Just transparent pricing, modular design, and unmatched speed.</p>
+                                <p>DIY PreFab is building the future — one kit at a time.</p>
+                                <Button className='common-btn'>Learn More</Button>
+                            </div>
+                        </Col>
+                        <Col md={6}>
+                        <div className="our-mission-container our-vision-container">
+                                <h6>Our Mission</h6>
+                                <hr />
+                                <p>To simplify and accelerate construction by offering high-quality, customizable, and affordable pre engineered building kits that empower individuals, businesses, and communities to build with confidence.</p>
+                                <Button className='common-btn'>Learn More</Button>
+                            </div>
+                        </Col>
+                    </Row>
+                </Container>
+            </section>
+
             <Footer />
         </div>
     )
