@@ -732,6 +732,26 @@ hr {
   padding: 30px;
   gap: 20px;
   height: 100%;
+  transition: all 0.5s ease;
+}
+.our-vision-container::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background-image: linear-gradient(45deg, #20cb10 90%, #ffffff);
+  z-index: -1;
+  opacity: 0;
+}
+.our-vision-container::before {
+  filter: blur(10px);
+}
+.our-vision-container:hover::after {
+  opacity: 1;
 }
 .our-vision-container h6 {
   color: #ffffff;
@@ -745,8 +765,152 @@ hr {
   margin-bottom: 0px;
 }
 .our-vision-container.our-mission-container {
-  background-image: linear-gradient(to bottom, #001524 , #342e2e);
+  background-image: linear-gradient(to bottom, #001524, #342e2e);
   display: flex;
 }
 
 /**************************** Our Vision & Mission design End *************************/
+
+/**************************** Counter design Start *************************/
+
+.counter-section {
+  width: 100%;
+  background-color: #001524;
+  margin-bottom: 20px;
+}
+.counter-section-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 40px 0px;
+}
+.counter-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.counter-box h4 {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 0px;
+}
+.counter-box p {
+  color: #ffffff;
+  font-size: 14px;
+  margin-bottom: 0px;
+}
+
+/**************************** Counter design End *************************/
+
+/**************************** Why Choose Us design Start *************************/
+
+.why-choose-us {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.why-choose-left-content-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+.why-choose-left-content-container h6 {
+  position: relative;
+  font-size: 14px;
+  font-weight: 500;
+  color: #001524;
+  margin-bottom: 0px;
+  text-transform: uppercase;
+}
+.why-choose-left-content-container h6::after {
+  position: absolute;
+  content: "";
+  width: 100px;
+  height: 2px;
+  left: 100%;
+  top: 50%;
+  margin-left: 8px;
+  border-radius: 10px;
+  background-color: #001524;
+}
+.why-choose-left-content-container h4 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #001524;
+  margin-bottom: 0px;
+}
+.why-choose-left-content-container p {
+  font-size: 15px;
+  color: #001524;
+  margin-bottom: 0px;
+}
+.why-choose-right-content-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.why-choose-right-content-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.hover-content-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #00000090;
+  opacity: 0;
+  transition: all 0.6s ease-in-out;
+  border-radius: 20px;
+}
+.why-choose-right-content-container:hover .hover-content-section {
+  animation: slideUp 0.6s ease-in-out;
+  z-index: 1;
+  opacity: 1;
+}
+@keyframes slideUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.hover-content-section h4 {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 0px;
+}
+.hover-content-section p {
+  color: #ffffff;
+  font-size: 14px;
+  margin-bottom: 0px;
+}
+.why-choose-right-content-container .hover-content-section .common-btn {
+  background-color: #ffffff !important;
+  color: #001524 !important;
+  padding: 6px 20px !important;
+  border: 1px solid #001524 !important;
+}
+
+/****************************  Why Choose Us design End *************************/

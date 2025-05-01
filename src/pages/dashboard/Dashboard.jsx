@@ -10,6 +10,8 @@ import { FaHelmetSafety } from 'react-icons/fa6'
 import { MdSupportAgent } from 'react-icons/md'
 import { GiCargoCrane, GiMineTruck } from 'react-icons/gi'
 
+import Counter from '../../component/counter/Counter'
+
 const Dashboard = () => {
     return (
         <div>
@@ -132,12 +134,66 @@ const Dashboard = () => {
                             </div>
                         </Col>
                         <Col md={6}>
-                        <div className="our-mission-container our-vision-container">
+                            <div className="our-mission-container our-vision-container">
                                 <h6>Our Mission</h6>
                                 <hr />
                                 <p>To simplify and accelerate construction by offering high-quality, customizable, and affordable pre engineered building kits that empower individuals, businesses, and communities to build with confidence.</p>
                                 <Button className='common-btn'>Learn More</Button>
                             </div>
+                        </Col>
+                    </Row>
+                </Container>
+            </section>
+
+            <section className="counter-section">
+                <Container>
+                    <div className="counter-section-container">
+                        {/* <div className="counter-box">
+                            <h4>96%</h4>
+                            <p>Cases Solved</p>
+                        </div> */}
+                        <Counter end={96} duration={1200} label="Cases Solved" />
+                        <Counter end={20} duration={1700} label="Project Done" showPercent={false} />
+                        <Counter end={100} duration={2200} label="Happy Client" />
+                        <Counter end={100} duration={2500} label="Timeline Delivery" />
+                    </div>
+                </Container>
+            </section>
+
+            <section className="why-choose-us">
+                <Container>
+                    <Row>
+                        <Col md={6}>
+                            <div className="why-choose-left-content-container">
+                                <h6>Why Choose Us</h6>
+                                <h4>Precision Fabrication for High-Performance Office & Workspace Solutions</h4>
+                                <p>At DIY PreFab, we focus on delivering top-tier prefab buildings that are expertly fabricated for functionality, speed, and style—enhancing productivity and professionalism.</p>
+                                <hr style={{ borderColor: "#001524", borderWidth: "1px" }} />
+                            </div>
+                        </Col>
+                        <Col md={6}>
+                            <Row>
+                                <Col md={6}>
+                                    <div className="why-choose-right-content-container">
+                                        <img src="https://img.freepik.com/free-vector/industry-smart-city_53876-17751.jpg?uid=R97735465&ga=GA1.1.1117345047.1692198205&semt=ais_hybrid&w=740" alt="Industry-Video" className='img-fluid' />
+                                        <div className="hover-content-section">
+                                            <h4>Smart Building</h4>
+                                            <p>Explore the future of construction with our smart building solutions, integrating technology and design for optimal efficiency.</p>
+                                            <Button className='btn common-btn'>Learn More</Button>
+                                        </div>
+                                    </div>
+                                </Col>
+                                <Col md={6}>
+                                    <div className="why-choose-right-content-container">
+                                        <img src="https://img.freepik.com/free-photo/pollution-industry-exterior-daylight_23-2149057677.jpg?uid=R97735465&ga=GA1.1.1117345047.1692198205&semt=ais_hybrid&w=740" alt="Industry-Video" className='img-fluid' />
+                                        <div className="hover-content-section">
+                                            <h4>Smart Building</h4>
+                                            <p>Explore the future of construction with our smart building solutions, integrating technology and design for optimal efficiency.</p>
+                                            <Button className='btn common-btn'>Learn More</Button>
+                                        </div>
+                                    </div>
+                                </Col>
+                            </Row>
                         </Col>
                     </Row>
                 </Container>
