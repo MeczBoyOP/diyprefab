@@ -1,18 +1,88 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Footer from '../../component/footer/Footer'
 import NavBarHead from '../../component/navbar/NavBarHead'
-import { Button, Col, Container, Row } from 'reactstrap'
-import { TbSettingsBolt } from 'react-icons/tb'
-import { IoLogoElectron, IoSettingsOutline } from 'react-icons/io5'
+import { Button, Carousel, CarouselControl, CarouselIndicators, CarouselItem, Col, Container, Row } from 'reactstrap'
+import { TbSettingsBolt, TbSettingsUp } from 'react-icons/tb'
 import ImagePath from '../../assets/ImagePath'
 import { IoIosPlayCircle } from 'react-icons/io'
 import { FaHelmetSafety } from 'react-icons/fa6'
-import { MdSupportAgent } from 'react-icons/md'
-import { GiCargoCrane, GiMineTruck } from 'react-icons/gi'
+import { MdFactory, MdSupportAgent } from 'react-icons/md'
 
 import Counter from '../../component/counter/Counter'
+import { FaLayerGroup, FaLeaf, FaSortAmountUp } from 'react-icons/fa'
+import { IoLogoElectron, IoSettingsOutline } from 'react-icons/io5'
+import { GiCargoCrane, GiMineTruck } from 'react-icons/gi'
+import { HiOutlineClipboardDocumentList } from 'react-icons/hi2'
+import ContactForm from '../../component/contactform/ContactForm'
+import ContactImg from '../../assets/images/undraw_letter_ombg.svg'
 
 const Dashboard = () => {
+    const chooseUs = [
+        {
+            id: 1,
+            icon: <TbSettingsUp className='choose-us-icons' />,
+            title: "Extended Equipment Lifespan",
+            description: "Crafted with high-grade materials to ensure long-term durability and low maintenance in work environments."
+        },
+        {
+            id: 2,
+            icon: <FaHelmetSafety className='choose-us-icons' />,
+            title: "Enhanced Safety Compliance",
+            description: "All structures are fabricated to meet stringent workplace safety standards and building codes."
+        },
+        {
+            id: 3,
+            icon: <FaSortAmountUp className='choose-us-icons' />,
+            title: "Client-Centric Approach",
+            description: "Our workspace solutions are tailored for efficiency, comfort, and user satisfaction from design to delivery."
+        },
+        {
+            id: 4,
+            icon: <FaLeaf className='choose-us-icons' />,
+            title: "Eco-Friendly Fabrication",
+            description: "We use sustainable materials and processes to reduce environmental impact while maximizing performance."
+        }
+    ]
+
+    const weOfferList = [
+        {
+            id: 1,
+            icon: <MdFactory className='we-offer-icons' />,
+            title: "Fabrication",
+            description: "Our fabrication process ensures precision-built prefab office and workspace structures that are durable, efficient, and ready for rapid deployment."
+        },
+        {
+            id: 2,
+            icon: <HiOutlineClipboardDocumentList className='we-offer-icons' />,
+            title: "Procurement",
+            description: "Our streamlined procurement process ensures timely sourcing of high-quality materials for prefab office and workspace construction."
+        },
+        {
+            id: 3,
+            icon: <FaLayerGroup className='we-offer-icons' />,
+            title: "Engineering & Design",
+            description: "Our engineering and design process combines innovation with precision to create efficient, modern prefab office and workspace solutions."
+        },
+        {
+            id: 4,
+            icon: <GiCargoCrane className='we-offer-icons' />,
+            title: "Construction",
+            description: "Our construction process for prefab office and workspace buildings ensures fast, efficient, and high-quality results."
+        },
+        {
+            id: 5,
+            icon: <GiCargoCrane className='we-offer-icons' />,
+            title: "Technical Consulting",
+            description: "Unlock smarter building outcomes with our expert technical consulting for prefab office and workspace projects."
+        },
+        {
+            id: 6,
+            icon: <GiCargoCrane className='we-offer-icons' />,
+            title: "Civil Engineering",
+            description: "Our civil engineering expertise ensures that every prefab office and workspace is structurally sound, efficient, and built to last."
+        },
+    ]
+
     return (
         <div>
             <NavBarHead />
@@ -148,10 +218,6 @@ const Dashboard = () => {
             <section className="counter-section">
                 <Container>
                     <div className="counter-section-container">
-                        {/* <div className="counter-box">
-                            <h4>96%</h4>
-                            <p>Cases Solved</p>
-                        </div> */}
                         <Counter end={96} duration={1200} label="Cases Solved" />
                         <Counter end={20} duration={1700} label="Project Done" showPercent={false} />
                         <Counter end={100} duration={2200} label="Happy Client" />
@@ -169,6 +235,18 @@ const Dashboard = () => {
                                 <h4>Precision Fabrication for High-Performance Office & Workspace Solutions</h4>
                                 <p>At DIY PreFab, we focus on delivering top-tier prefab buildings that are expertly fabricated for functionality, speed, and style—enhancing productivity and professionalism.</p>
                                 <hr style={{ borderColor: "#001524", borderWidth: "1px" }} />
+                                <div className="choose-us-container">
+                                    {chooseUs.map((item, index) => (
+                                        <div className="why-choose-us-boxes">
+                                            <div className="box-icon">{item.icon}</div>
+                                            <div className="box-content">
+                                                <h4>{item.title}</h4>
+                                                <p>{item.description}</p>
+                                            </div>
+                                        </div>
+                                    ))}
+
+                                </div>
                             </div>
                         </Col>
                         <Col md={6}>
@@ -194,6 +272,87 @@ const Dashboard = () => {
                                     </div>
                                 </Col>
                             </Row>
+                        </Col>
+                    </Row>
+                </Container>
+            </section>
+
+            <section className="we-offer" style={{
+                backgroundImage: `url(${ImagePath.WeOffer})`, backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                padding: '50px 0',
+                marginBottom: '20px',
+            }}>
+                <Container>
+                    <div className="we-offer-container">
+                        {weOfferList.map((item, index) => (
+                            <div className="we-offer-box" key={index}>
+                                <div className="we-offer-inner">
+                                    <div className="we-offer-front">
+                                        <div className="we-offer-icon">{item.icon}</div>
+                                        <div className="we-offer-content">
+                                            <h4>{item.title}</h4>
+                                        </div>
+                                        <Button className="common-btn">See More</Button>
+                                    </div>
+                                    <div className="we-offer-hover-box">
+                                        <div className="we-offer-hover-content">
+                                            <h4>{item.title}</h4>
+                                            <p>{item.description}</p>
+                                            <Button className="common-btn">Learn More</Button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        ))}
+                    </div>
+                </Container>
+            </section>
+
+            <section className="take-action" >
+                <img src={ImagePath.TakeAction} alt="take-action-background" className='img-fluid' />
+                <Container>
+                    <div className="take-action-container">
+                        <div className="take-action-box">
+                            <h3>Empower Your Future with Industrial Excellence, Seize the Opportunity to Engineer Innovation</h3>
+                            <p>We assist with structural planning, smart material choices, and seamless integration of building systems.</p>
+                            <Button className='btn common-btn'>TAKE ACTION NOW</Button>
+                        </div>
+                    </div>
+                </Container>
+            </section>
+
+            <section className="trust-slider">
+                <Container>
+                    <Row className='align-items-center'>
+                        <Col md={6}>
+                            <div className="trust-slider-container">
+                                <h2>Trusted by Engineering Visionaries and Industrial Innovators Worldwide</h2>
+                                <p>Trusted by engineering and industrial leaders for delivering innovative, reliable, and scalable prefab building solutions.</p>
+                                <hr style={{ borderColor: "#001524", borderWidth: "1px" }} />
+                                {/* Slider Will be here... */}
+                            </div>
+                        </Col>
+                        <Col md={6}>
+                            <div className="trust-map-img-box">
+                                <img src={ImagePath.Map} alt="map" className='img-fluid' />
+                            </div>
+                        </Col>
+                    </Row>
+                </Container>
+            </section>
+
+            <section className="send-message">
+                <Container>
+                    <Row className='align-items-center'>
+                        <Col md={8}>
+                            <ContactForm />
+                        </Col>
+                        <Col md={4}>
+                            <div className="contact-form-img-box">
+                                <img src={ContactImg} alt="" className='img-fluid' />
+                            </div>
                         </Col>
                     </Row>
                 </Container>

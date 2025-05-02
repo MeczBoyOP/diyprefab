@@ -853,7 +853,7 @@ hr {
 .why-choose-right-content-container {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 90dvh;
   border-radius: 20px;
   overflow: hidden;
 }
@@ -913,4 +913,303 @@ hr {
   border: 1px solid #001524 !important;
 }
 
+.choose-us-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+.why-choose-us-boxes {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.box-icon {
+  width: 100px;
+  height: 80px;
+  background-color: #001524;
+  display: grid;
+  place-content: center;
+}
+.box-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.box-content h4 {
+  color: #001524;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 0px;
+}
+.box-content p {
+  color: #001524;
+  font-size: 14px;
+  margin-bottom: 0px;
+}
+.choose-us-icons {
+  font-size: 30px;
+  color: #ffffff;
+}
+
 /****************************  Why Choose Us design End *************************/
+
+/****************************  We Offer design Start *************************/
+
+.we-offer-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.we-offer-box {
+  perspective: 1000px;
+  height: 200px;
+}
+
+.we-offer-box:hover .we-offer-inner {
+  transform: rotateY(180deg);
+}
+
+.we-offer-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+}
+
+.we-offer-front,
+.we-offer-hover-box {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 20px;
+  gap: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.5s ease;
+}
+
+.we-offer-front {
+  background: linear-gradient(45deg, #001524, #342e2e);
+  color: #fff;
+  z-index: 2;
+}
+
+.we-offer-hover-box {
+  background: linear-gradient(45deg, #001524, #86863b);
+  color: #fff;
+  transform: rotateY(180deg);
+}
+
+.we-offer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.we-offer-box h4 {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 0px;
+  text-align: center;
+}
+.we-offer-box p {
+  color: #ffffff;
+  font-size: 14px;
+  margin-bottom: 0px;
+  text-align: center;
+}
+.we-offer-box .we-offer-icons {
+  color: #ffffff;
+  font-size: 3rem;
+}
+
+.we-offer-hover-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+/****************************  We Offer design End *************************/
+
+/****************************  We Offer design End *************************/
+
+.take-action {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  margin-bottom: 20px;
+}
+.take-action img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+.take-action-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-content: center;
+  background-color: #00000090;
+}
+.take-action-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.take-action-box h3 {
+  text-align: center;
+  width: 46%;
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 0px;
+}
+.take-action-box p {
+  text-align: center;
+  width: 46%;
+  color: #ffffff;
+  font-size: 14px;
+  margin-bottom: 0px;
+}
+
+/****************************  We Offer design End *************************/
+
+
+
+/****************************  Trust Slider design Start *************************/
+
+.trust-slider{
+  width: 100%;
+  background-color: #00152430;
+  margin-bottom: 20px;
+  padding: 40px 0px;
+}
+.trust-slider-container{
+  width: 86%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-startF;
+  gap: 20px;
+}
+.trust-slider-container h2{
+  font-size: 32px;
+  font-weight: 600;
+  color: #001524;
+  margin-bottom: 0px;
+}
+.trust-slider-container h2::after{
+  content: "";
+  width: 100px;
+  height: 2px;
+  left: 100%;
+  top: 50%;
+  margin-left: 8px;
+  border-radius: 10px;
+  background-color: #001524;
+}
+.trust-slider-container p{
+  font-size: 15px;
+  color: #001524;
+  margin-bottom: 0px;
+}
+.trust-map-img-box{
+  width: 100%;
+  height: 100%;
+}
+.trust-map-img-box img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/****************************  Trust Slider design End *************************/
+
+.send-message{
+  width: 100%;
+  padding: 40px 0px;
+  background-color: #001524;
+  margin-bottom: 20px;
+}
+
+.contact-form {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 4px #d9d9d9;
+}
+.contact-form h2 {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.contact-form p {
+  color: #ffffff;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+.contact-form label {
+  color: #ffffff;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.contact-form input {
+  width: 100%;
+  height: 36px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 0px;
+  background-color: #ffffff;
+}
+.contact-form textarea {
+  width: 100%;
+  height: 80px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #d9d9d9;
+  border-radius: 0px;
+}
+
+.contact-form button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+.contact-form-img-box{
+  width: 100%;
+  height: 400px;
+}
+.contact-form-img-box img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
