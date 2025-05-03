@@ -1,6 +1,7 @@
 import React,{ useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css'
+import './Responsive.css'
 import Dashboard from './pages/dashboard/Dashboard'
 import NotFound from './pages/notfound/NotFound'
 

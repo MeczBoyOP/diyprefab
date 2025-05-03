@@ -15,6 +15,7 @@ import { GiCargoCrane, GiMineTruck } from 'react-icons/gi'
 import { HiOutlineClipboardDocumentList } from 'react-icons/hi2'
 import ContactForm from '../../component/contactform/ContactForm'
 import ContactImg from '../../assets/images/undraw_letter_ombg.svg'
+import DashboardSlider from '../../component/dashboardslider/DashboardSlider'
 
 const Dashboard = () => {
     const chooseUs = [
@@ -86,6 +87,8 @@ const Dashboard = () => {
     return (
         <div>
             <NavBarHead />
+
+            <DashboardSlider />
 
             <section className="performance-section">
                 <Container>
