@@ -20,7 +20,7 @@ const slides = [
         heading: "We provide cutting-edge, PEB Structure Solutions",
         title: 'High-quality PEB and modular structures, ensuring',
         image: Slider2,
-        des: 'X-Dev, Transforming code into visual poetry..!',
+        des: 'Explore our 3D Smart Building Planner, an intuitive digital tool that allows you to visualize, customize, and refine your prefabricated structure in real time. This immersive platform empowers you to experiment with layouts, optimize material usage, and perfect your design before execution—ensuring efficiency, cost-effectiveness, and sustainability from day one.',
     },
     {
         heading: "We provide cutting-edge, PEB Structure Solutions",
@@ -92,14 +92,14 @@ const DashboardSlider = () => {
                     </div>
                 ))}
             </div>
-            <div className="button">
+            {/* <div className="button">
                 <Button className="me-2 prev" onClick={prevSlide}>
                     <IoChevronBackOutline />
                 </Button>
                 <Button className="next" onClick={nextSlide}>
                     <IoChevronForward />
                 </Button>
-            </div>
+            </div> */}
         </div>
     );
 };

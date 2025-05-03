@@ -13,6 +13,7 @@ import {
     Container,
 } from 'reactstrap';
 import ImagePath from '../../assets/ImagePath';
+import { IoCloseSharp } from 'react-icons/io5';
 
 const navItems = [
     {
@@ -119,7 +120,7 @@ const NavBarHead = () => {
                 </NavbarBrand>
 
                 {/* Desktop Nav */}
-                <div className="d-none d-md-flex">
+                <div className="d-none d-lg-flex">
                     <Nav className="ml-auto" navbar>
                         {navItems.map((item, index) => (
                             <NavItem
@@ -154,20 +155,24 @@ const NavBarHead = () => {
                 </div>
 
                 {/* Hamburger for Mobile */}
-                <Button color="primary" className="d-md-none" onClick={toggleDrawer}>
+                <Button className="d-lg-none nav-bar-menu-open-button" onClick={toggleDrawer}>
                     ☰
                 </Button>
             </Navbar>
 
             {/* Drawer Sidebar for Mobile */}
             <div className={`drawer ${isDrawerOpen ? 'open' : ''}`}>
-                <Button close onClick={toggleDrawer} className="close-btn" />
+                <div className='text-end'>
+                    <Button onClick={toggleDrawer} className="close-btn">
+                        <IoCloseSharp className='side-bar-close-btn-icon'/>
+                    </Button>
+                </div>
                 <Nav vertical className="p-4">
                     {navItems.map((item, index) => (
                         <div key={index}>
-                            <NavLink href="#" onClick={(e) => handleMobileMenuClick(e, index)} className="d-flex justify-content-between align-items-center">
+                            <NavLink href="#" onClick={(e) => handleMobileMenuClick(e, index)} className="d-flex justify-content-between align-items-center side-nav-box">
                                 {item.title}
-                                <span className="arrow">{mobileOpenSubmenu === index ? '▲' : '▼'}</span>
+                                <span className="arrow">{mobileOpenSubmenu === index ? <IoIosArrowUp className='side-nav-bar-arrow-icon' /> : <IoIosArrowDown className='side-nav-bar-arrow-icon' />}</span>
                             </NavLink>
 
                             {/* Submenu for mobile with animation */}

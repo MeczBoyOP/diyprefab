@@ -15,7 +15,7 @@ const Footer = () => {
               <Link to="/" className='logo-image'>
                 <img src={ImagePath.Logo} alt="Logo" className='img-fluid' />
               </Link>
-              <p className="footer-description" style={{ maxWidth: '320px' }}>
+              <p className="footer-description">
                 Diyprefab is your go-to destination for customizable, easy-to-assemble prefab building kits. Whether you're creating a backyard office, tiny home, or storage shed, we make construction simple and affordable.
               </p>
               <div className="contact-info-container">

@@ -116,7 +116,7 @@ const Dashboard = () => {
             <section className="we-are-section">
                 <Container>
                     <Row>
-                        <Col md={6}>
+                        <Col md={12} lg={6}>
                             <div className="we-are-left">
                                 <h6>Who We Are</h6>
                                 <h2>Your Trusted and Visionary Partner in Engineering Excellence</h2>
@@ -136,7 +136,7 @@ const Dashboard = () => {
                                 </div>
                             </div>
                         </Col>
-                        <Col md={6}>
+                        <Col md={12} lg={6}>
                             <div className="we-are-right">
                                 <div className="we-are-back-image-section">
                                     <div className="we-are-back-right-content-box">
@@ -196,7 +196,7 @@ const Dashboard = () => {
             <section className="our-vision-mission-section">
                 <Container>
                     <Row>
-                        <Col md={6}>
+                        <Col md={6} className='mb-md-0 mb-sm-1'>
                             <div className="our-vision-container">
                                 <h6>Our Vision</h6>
                                 <hr />
@@ -231,7 +231,7 @@ const Dashboard = () => {
 
             <section className="why-choose-us">
                 <Container>
-                    <Row>
+                    <Row className='align-items-center'>
                         <Col md={6}>
                             <div className="why-choose-left-content-container">
                                 <h6>Why Choose Us</h6>
@@ -349,43 +349,32 @@ const Dashboard = () => {
             <section className="send-message">
                 <Container>
                     <Row className='align-items-center'>
-                        <Col md={8}>
+                        <Col md={12} lg={8}>
                             <ContactForm />
                         </Col>
-                        <Col md={4}>
+                        <Col lg={4}>
                             <div className="contact-form-img-box">
                                 <img src={ContactImg} alt="" className='img-fluid' />
                             </div>
                         </Col>
                     </Row>
                 </Container>
-            </section>
-            <section className="sign-up">
-                <Container>
-                    <div className='sign-up-section'>
-                        <div className="sign-up-content">
-                            <h5>Stay updated with our latest news, promotions, and tech insights.</h5>
-                            <div className="sign-up-box"></div>
-                        </div>
-                    </div>
-                </Container>
-            </section>
-
+            </section>          
 
             <div className="wave-wrapper">
                 <div className="wave"></div>
                 <div className="wave"></div>
                 <div className="wave"></div>
                 <Container>
-                <div className="sign-up-content">
-                    <h5 style={{ position: "relative", zIndex: 2}}>
-                        Stay updated with our latest news, promotions, and tech insights.
-                    </h5>
-                    <div className="input-button-wrapper">
-                        <input type="text" placeholder="Email" className="styled-input" />
-                        <button className="styled-button">Submit</button>
+                    <div className="sign-up-content">
+                        <h5 style={{ position: "relative", zIndex: 2 }}>
+                            Stay updated with our latest news, promotions, and tech insights.
+                        </h5>
+                        <div className="input-button-wrapper">
+                            <input type="text" placeholder="Email" className="styled-input" />
+                            <button className="styled-button">Submit</button>
+                        </div>
                     </div>
-                </div>
                 </Container>
             </div>
 
