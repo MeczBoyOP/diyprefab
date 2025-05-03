@@ -2,42 +2,49 @@ import React, { useEffect, useRef } from 'react';
 import { IoChevronBackOutline, IoChevronForward } from 'react-icons/io5';
 import { Button } from 'reactstrap';
 
+import Slider1 from '../../assets/images/slider-1.webp';
+import Slider2 from '../../assets/images/slider-2.webp';
+import Slider3 from '../../assets/images/slider-3.webp';
+import Slider4 from '../../assets/images/slider-4.webp';
+import Slider5 from '../../assets/images/slider-5.webp';
+import Slider6 from '../../assets/images/slider-6.jpg';
+
 const slides = [
     {
-        heading:"We provide cutting-edge, PEB Structure Solutions",
-        title: 'High-quality PEB and modular structures, ensuring faster constructionreduced costsunmatched durability Explore our 3D Smart Building Planner, an intuitive digital tool that allows you to visualize, customize, and refine your prefabricated structure in real time. This immersive platform empowers you to experiment with layouts, optimize material usage, and perfect your design before execution—ensuring efficiency, cost-effectiveness, and sustainability from day one.',
-        image: 'https://i.ibb.co/qCkd9jS/img1.jpg',
+        heading: "We provide cutting-edge, PEB Structure Solutions",
+        title: 'High-quality PEB and modular structures, ensuring',
+        image: Slider1,
+        des: 'Explore our 3D Smart Building Planner, an intuitive digital tool that allows you to visualize, customize, and refine your prefabricated structure in real time. This immersive platform empowers you to experiment with layouts, optimize material usage, and perfect your design before execution—ensuring efficiency, cost-effectiveness, and sustainability from day one.',
+    },
+    {
+        heading: "We provide cutting-edge, PEB Structure Solutions",
+        title: 'High-quality PEB and modular structures, ensuring',
+        image: Slider2,
         des: 'X-Dev, Transforming code into visual poetry..!',
     },
     {
-       heading:"We provide cutting-edge, PEB Structure Solutions",
-        title: 'Switzerland',
-        image: 'https://i.ibb.co/jrRb11q/img2.jpg',
-        des: 'X-Dev, Transforming code into visual poetry..!',
+        heading: "We provide cutting-edge, PEB Structure Solutions",
+        title: 'High-quality PEB and modular structures, ensuring',
+        image: Slider3,
+        des: 'Explore our 3D Smart Building Planner, an intuitive digital tool that allows you to visualize, customize, and refine your prefabricated structure in real time. This immersive platform empowers you to experiment with layouts, optimize material usage, and perfect your design before execution—ensuring efficiency, cost-effectiveness, and sustainability from day one.',
     },
     {
-        heading:"We provide cutting-edge, PEB Structure Solutions",
-        title: 'Switzerland',
-        image: 'https://i.ibb.co/NSwVv8D/img3.jpg',
-        des: 'X-Dev, Transforming code into visual poetry..!',
+        heading: "We provide cutting-edge, PEB Structure Solutions",
+        title: 'High-quality PEB and modular structures, ensuring',
+        image: Slider4,
+        des: 'Explore our 3D Smart Building Planner, an intuitive digital tool that allows you to visualize, customize, and refine your prefabricated structure in real time. This immersive platform empowers you to experiment with layouts, optimize material usage, and perfect your design before execution—ensuring efficiency, cost-effectiveness, and sustainability from day one.',
     },
     {
-        heading:"We provide cutting-edge, PEB Structure Solutions",
-        title: 'Switzerland',
-        image: 'https://i.ibb.co/Bq4Q0M8/img4.jpg',
-        des: 'X-Dev, Transforming code into visual poetry..!',
+        heading: "We provide cutting-edge, PEB Structure Solutions",
+        title: 'High-quality PEB and modular structures, ensuring',
+        image: Slider5,
+        des: 'Explore our 3D Smart Building Planner, an intuitive digital tool that allows you to visualize, customize, and refine your prefabricated structure in real time. This immersive platform empowers you to experiment with layouts, optimize material usage, and perfect your design before execution—ensuring efficiency, cost-effectiveness, and sustainability from day one.',
     },
     {
-        heading:"We provide cutting-edge, PEB Structure Solutions",
-        title: 'Switzerland',
-        image: 'https://i.ibb.co/jTQfmTq/img5.jpg',
-        des: 'X-Dev, Transforming code into visual poetry..!',
-    },
-    {
-        heading:"We provide cutting-edge, PEB Structure Solutions",
-        title: 'Switzerland',
-        image: 'https://i.ibb.co/RNkk6L0/img6.jpg',
-        des: 'X-Dev, Transforming code into visual poetry..!',
+        heading: "We provide cutting-edge, PEB Structure Solutions",
+        title: 'High-quality PEB and modular structures, ensuring',
+        image: Slider6,
+        des: 'Explore our 3D Smart Building Planner, an intuitive digital tool that allows you to visualize, customize, and refine your prefabricated structure in real time. This immersive platform empowers you to experiment with layouts, optimize material usage, and perfect your design before execution—ensuring efficiency, cost-effectiveness, and sustainability from day one.',
     },
 ];
 
@@ -63,8 +70,7 @@ const DashboardSlider = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             nextSlide();
-        }, 10000); // Change slide every 10 seconds
-
+        }, 5000);
         return () => clearInterval(interval);
     }, []);
 

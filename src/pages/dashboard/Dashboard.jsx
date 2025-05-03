@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Footer from '../../component/footer/Footer'
 import NavBarHead from '../../component/navbar/NavBarHead'
-import { Button, Carousel, CarouselControl, CarouselIndicators, CarouselItem, Col, Container, Row } from 'reactstrap'
+import { Button, Carousel, CarouselControl, CarouselIndicators, CarouselItem, Col, Container, Input, Row } from 'reactstrap'
 import { TbSettingsBolt, TbSettingsUp } from 'react-icons/tb'
 import ImagePath from '../../assets/ImagePath'
 import { IoIosPlayCircle } from 'react-icons/io'
@@ -360,6 +360,35 @@ const Dashboard = () => {
                     </Row>
                 </Container>
             </section>
+            <section className="sign-up">
+                <Container>
+                    <div className='sign-up-section'>
+                        <div className="sign-up-content">
+                            <h5>Stay updated with our latest news, promotions, and tech insights.</h5>
+                            <div className="sign-up-box"></div>
+                        </div>
+                    </div>
+                </Container>
+            </section>
+
+
+            <div className="wave-wrapper">
+                <div className="wave"></div>
+                <div className="wave"></div>
+                <div className="wave"></div>
+                <Container>
+                <div className="sign-up-content">
+                    <h5 style={{ position: "relative", zIndex: 2}}>
+                        Stay updated with our latest news, promotions, and tech insights.
+                    </h5>
+                    <div className="input-button-wrapper">
+                        <input type="text" placeholder="Email" className="styled-input" />
+                        <button className="styled-button">Submit</button>
+                    </div>
+                </div>
+                </Container>
+            </div>
+
 
             <Footer />
         </div>

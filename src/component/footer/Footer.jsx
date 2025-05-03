@@ -7,7 +7,7 @@ import ImagePath from '../../assets/ImagePath';
 const Footer = () => {
   return (
     <footer className="footer-section">
-      <Container>
+      <Container>      
         <div className="footer-content-section">
           <Row>
 
