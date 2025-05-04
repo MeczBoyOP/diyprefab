@@ -1,7 +1,6 @@
 import React from 'react'
 import NavBarHead from '../../component/navbar/NavBarHead'
 import Footer from '../../component/footer/Footer'
-import TrustSlider from '../../component/trustSlider/trustSlider'
 import CounterSection from '../../component/counter/CounterSection'
 import OurVisionMission from '../../component/ourVisionMission/OurVisionMission'
 import WhoWeAre from '../../component/whoWeAre/WhoWeAre'
@@ -10,6 +9,7 @@ import BannerSection from '../../component/bannerSection/bannerSection'
 import { Container, Table } from 'reactstrap'
 import { FaLocationArrow, FaWarehouse } from 'react-icons/fa'
 import TestimonialSection from '../../component/testimonialSection/TestimonialSection'
+import TrustSlider from '../../component/trustSlider/trustSlider'
 
 const benefitsList = [
     {
@@ -101,6 +101,7 @@ const casesBoxList = [
         description: `Discover the future of construction with "DIY PreFab"advanced development and fabrication solutions.From concept to completion, our prefab solutions .`
     },
 ]
+
 const comparisonList =[
     {
         id:1,
