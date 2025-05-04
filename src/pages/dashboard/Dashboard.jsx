@@ -6,7 +6,7 @@ import { TbSettingsBolt, TbSettingsUp } from 'react-icons/tb'
 import ImagePath from '../../assets/ImagePath'
 import { IoIosPlayCircle } from 'react-icons/io'
 import { FaHelmetSafety } from 'react-icons/fa6'
-import { MdFactory, MdSupportAgent } from 'react-icons/md'
+import { MdEngineering, MdFactory, MdSupportAgent } from 'react-icons/md'
 
 import Counter from '../../component/counter/Counter'
 import { FaLayerGroup, FaLeaf, FaSortAmountUp } from 'react-icons/fa'
@@ -21,6 +21,7 @@ import OurVisionMission from '../../component/ourVisionMission/OurVisionMission'
 import CounterSection from '../../component/counter/CounterSection'
 import TrustSlider from '../../component/trustSlider/TrustSlider'
 import WaveWrapper from '../../component/waveWrapper/WaveWrapper'
+import { VscFileSubmodule } from 'react-icons/vsc'
 
 const Dashboard = () => {
     const chooseUs = [
@@ -77,13 +78,13 @@ const Dashboard = () => {
         },
         {
             id: 5,
-            icon: <GiCargoCrane className='we-offer-icons' />,
+            icon: <VscFileSubmodule className='we-offer-icons' />,
             title: "Technical Consulting",
             description: "Unlock smarter building outcomes with our expert technical consulting for prefab office and workspace projects."
         },
         {
             id: 6,
-            icon: <GiCargoCrane className='we-offer-icons' />,
+            icon: <MdEngineering className='we-offer-icons' />,
             title: "Civil Engineering",
             description: "Our civil engineering expertise ensures that every prefab office and workspace is structurally sound, efficient, and built to last."
         },
@@ -186,7 +187,7 @@ const Dashboard = () => {
                             <Row>
                                 <Col md={6}>
                                     <div className="why-choose-right-content-container">
-                                        <img src="https://img.freepik.com/free-vector/industry-smart-city_53876-17751.jpg?uid=R97735465&ga=GA1.1.1117345047.1692198205&semt=ais_hybrid&w=740" alt="Industry-Video" className='img-fluid' />
+                                        <img src={ImagePath.ChooseUsVideo} alt="Industry-Video" className='img-fluid' />
                                         <div className="hover-content-section">
                                             <h4>Smart Building</h4>
                                             <p>Explore the future of construction with our smart building solutions, integrating technology and design for optimal efficiency.</p>
@@ -196,7 +197,7 @@ const Dashboard = () => {
                                 </Col>
                                 <Col md={6}>
                                     <div className="why-choose-right-content-container">
-                                        <img src="https://img.freepik.com/free-photo/pollution-industry-exterior-daylight_23-2149057677.jpg?uid=R97735465&ga=GA1.1.1117345047.1692198205&semt=ais_hybrid&w=740" alt="Industry-Video" className='img-fluid' />
+                                        <img src={ImagePath.ChooseUsImg} alt="Industry-Video" className='img-fluid' />
                                         <div className="hover-content-section">
                                             <h4>Smart Building</h4>
                                             <p>Explore the future of construction with our smart building solutions, integrating technology and design for optimal efficiency.</p>

@@ -57,7 +57,7 @@ hr {
 
 /**************************** Top Header design Start *************************/
 
-.header{
+.header {
   width: 100%;
   position: sticky;
   top: 0;
@@ -1093,7 +1093,7 @@ hr {
 .take-action {
   position: relative;
   width: 100%;
-  height: 400px;
+  height: 500px;
   margin-bottom: 20px;
 }
 .take-action img {
@@ -1479,6 +1479,7 @@ body {
 .input-button-wrapper {
   display: flex;
   max-width: 100%;
+  z-index: 10;
 }
 
 /* .styled-input {
@@ -1708,4 +1709,71 @@ thead tr th {
 
 .common-table-tbody tr:nth-child(even) td {
   background-color: #f5f5f5 !important;
+}
+
+/********************* Contact Us Form ***************/
+
+.contact-us-form-container {
+  width: 100%;
+  margin: 40px 0px 30px;
+}
+.contact-us-form-left {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+.contact-us-form-left h6 {
+  color: #001524;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-bottom: 0px;
+}
+.contact-us-form-left h2 {
+  color: #001524;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 0px;
+}
+.contact-us-form-left p {
+  color: #001524;
+  font-size: 14px;
+  margin-bottom: 0px;
+}
+.contact-us-form-right {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-shadow: 0px 2px 4px #d9d9d9;
+}
+.contact-us-form-heading{
+  color: #001524;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.contact-us-form-label-input-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  margin: 0px 0px 20px;
+}
+.contact-us-form-label {
+  color: #001524;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 0px;
+}
+.contact-us-form-input-box.form-control {
+  width: 100%;
+  padding: 4px 10px;
+  display: flex;
+  flex: 1;
+  border-radius: 0px;
+  background-color: #f5f5f5;
+  border: 1px solid #d9d9d9;
+  font-size: 14px;
 }

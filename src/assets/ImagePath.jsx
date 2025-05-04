@@ -5,9 +5,11 @@ import WeOffer from './images/we-offer.jpg';
 import TakeAction from './images/take-action.jpg';
 import Map from './images/map.png';
 import BannerPattern from './images/pattern-4.png';
+import ChooseUsVideo from './images/choose-us-video.jpg'
+import ChooseUsImg from './images/choose-us-img.jpg'
 
 const ImagePath = {
-    Logo,Performance,WRB,WeOffer,TakeAction,Map,BannerPattern,
+    Logo,Performance,WRB,WeOffer,TakeAction,Map,BannerPattern,ChooseUsVideo,ChooseUsImg
 };
 
 export default ImagePath;

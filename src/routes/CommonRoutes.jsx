@@ -4,6 +4,8 @@ import Dashboard from '../pages/dashboard/Dashboard';
 import IntroductionToDIYPreFabSolutions from '../pages/home/IntroductionToDIYPreFabSolutions';
 import KeyBenefits from '../pages/home/KeyBenefits';
 
+import LocateOurDeals from '../pages/contactUs/LocateOurDeals'
+
 import { AnimatePresence } from 'framer-motion'
 
 const CommonRoutes = () => {
@@ -14,6 +16,7 @@ const CommonRoutes = () => {
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/home/introToDiy" element={<IntroductionToDIYPreFabSolutions />} />
                 <Route path="/home/keyBenefits" element={<KeyBenefits />} />
+                <Route path="/contactUs/locateOurDeal" element={<LocateOurDeals />} />
             </Routes>
         </AnimatePresence>
     )

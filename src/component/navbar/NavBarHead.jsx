@@ -79,7 +79,7 @@ const navItems = [
         title: 'Contact Us',
         submenu: [
             { id: 1, title: "Inquiry Form", link: "" },
-            { id: 2, title: "Locate Our Dealers", link: "" },
+            { id: 2, title: "Locate Our Dealers", link: "/contactUs/locateOurDeal" },
             { id: 3, title: "Customer Support", link: "" },
         ],
     },
