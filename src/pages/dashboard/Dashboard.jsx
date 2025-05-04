@@ -19,7 +19,7 @@ import DashboardSlider from '../../component/dashboardslider/DashboardSlider'
 import WhoWeAre from '../../component/whoWeAre/WhoWeAre'
 import OurVisionMission from '../../component/ourVisionMission/OurVisionMission'
 import CounterSection from '../../component/counter/CounterSection'
-import TrustSlider from '../../component/trustSlider/trustSlider'
+import TrustSlider from '../../component/trustSlider/TrustSlider'
 import WaveWrapper from '../../component/waveWrapper/WaveWrapper'
 
 const Dashboard = () => {
