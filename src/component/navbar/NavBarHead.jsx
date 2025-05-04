@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FaLinkedinIn, FaYoutube } from 'react-icons/fa';
 import { IoIosArrowDown, IoIosArrowUp, IoMdCall } from 'react-icons/io';
 import { MdOutlineMail } from 'react-icons/md';
@@ -27,57 +27,60 @@ const navItems = [
     {
         title: 'About Us',
         submenu: [
-            { id: 1, title: "Introduction To DIY PreFab Solutions", link: "" },
-            { id: 2, title: "Key Benefits OF Prefab Construction", link: "" },
-            { id: 3, title: "Featured Projects", link: "" },
+            { id: 1, title: "Company Overview", link: "" },
+            { id: 2, title: "Our Vision & Mission", link: "" },
+            { id: 3, title: "Sustainability &Eco-Friendly Initiatives", link: "" },
+            { id: 4, title: "Manufacturing Process", link: "" },
         ],
     },
     {
         title: 'Products & Services',
         submenu: [
-            { id: 1, title: "Introduction To DIY PreFab Solutions", link: "" },
-            { id: 2, title: "Key Benefits OF Prefab Construction", link: "" },
-            { id: 3, title: "Featured Projects", link: "" },
+            { id: 1, title: "DIY PreFab Kits", link: "" },
+            { id: 2, title: "Wall & Roofing Solution", link: "" },
+            { id: 3, title: "Portable Structures", link: "" },
+            { id: 4, title: "Portable Structures", link: "" },
         ],
     },
     {
         title: 'Applications',
         submenu: [
-            { id: 1, title: "Introduction To DIY PreFab Solutions", link: "" },
-            { id: 2, title: "Key Benefits OF Prefab Construction", link: "" },
-            { id: 3, title: "Featured Projects", link: "" },
+            { id: 1, title: "Residential", link: "" },
+            { id: 2, title: "Commercial", link: "" },
+            { id: 3, title: "Industrial", link: "" },
+            { id: 4, title: "Educational Institutions", link: "" },
+            { id: 5, title: "Healthcare Facilities", link: "" },
         ],
     },
     {
         title: 'Projects & Studies',
         submenu: [
-            { id: 1, title: "Introduction To DIY PreFab Solutions", link: "" },
-            { id: 2, title: "Key Benefits OF Prefab Construction", link: "" },
-            { id: 3, title: "Featured Projects", link: "" },
+            { id: 1, title: "Success Stories", link: "" },
+            { id: 2, title: "Client Testimonials", link: "" },
+            { id: 3, title: "Project Gallery", link: "" },
         ],
     },
     {
         title: 'Blog News',
         submenu: [
-            { id: 1, title: "Introduction To DIY PreFab Solutions", link: "" },
-            { id: 2, title: "Key Benefits OF Prefab Construction", link: "" },
-            { id: 3, title: "Featured Projects", link: "" },
+            { id: 1, title: "Industry Trends", link: "" },
+            { id: 2, title: "Construction Trips & Tricks", link: "" },
+            { id: 3, title: "Sustainable in Prefab", link: "" },
         ],
     },
     {
         title: 'Careers',
         submenu: [
-            { id: 1, title: "Introduction To DIY PreFab Solutions", link: "" },
-            { id: 2, title: "Key Benefits OF Prefab Construction", link: "" },
-            { id: 3, title: "Featured Projects", link: "" },
+            { id: 1, title: "Job Openings", link: "" },
+            { id: 2, title: "Work Culture", link: "" },
         ],
     },
     {
         title: 'Contact Us',
         submenu: [
-            { id: 1, title: "Introduction To DIY PreFab Solutions", link: "" },
-            { id: 2, title: "Key Benefits OF Prefab Construction", link: "" },
-            { id: 3, title: "Featured Projects", link: "" },
+            { id: 1, title: "Inquiry Form", link: "" },
+            { id: 2, title: "Locate Our Dealers", link: "" },
+            { id: 3, title: "Customer Support", link: "" },
         ],
     },
 ];
@@ -124,7 +127,7 @@ const NavBarHead = () => {
     }, [isDrawerOpen]);
 
     return (
-        <header>
+        <header className='header'>
             <div className="header-top">
                 <div className="contact-info-container">
                     <Link to="mailto:info@diyprefab.com" className="contact-info-box" style={{ textDecoration: 'none' }}>

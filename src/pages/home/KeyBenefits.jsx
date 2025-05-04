@@ -1,15 +1,16 @@
 import React from 'react'
-import NavBarHead from '../../component/navbar/NavBarHead'
-import Footer from '../../component/footer/Footer'
-import CounterSection from '../../component/counter/CounterSection'
-import OurVisionMission from '../../component/ourVisionMission/OurVisionMission'
-import WhoWeAre from '../../component/whoWeAre/WhoWeAre'
-import WaveWrapper from '../../component/waveWrapper/WaveWrapper'
-import BannerSection from '../../component/bannerSection/bannerSection'
 import { Container, Table } from 'reactstrap'
 import { FaLocationArrow, FaWarehouse } from 'react-icons/fa'
-import TestimonialSection from '../../component/testimonialSection/TestimonialSection'
+
+import NavBarHead from '../../component/navbar/NavBarHead'
+import BannerSection from '../../component/bannerSection/BannerSection'
+import WhoWeAre from '../../component/whoWeAre/WhoWeAre'
+import OurVisionMission from '../../component/ourVisionMission/OurVisionMission'
+import CounterSection from '../../component/counter/CounterSection'
 import TrustSlider from '../../component/trustSlider/trustSlider'
+import TestimonialSection from '../../component/testimonialSection/TestimonialSection'
+import WaveWrapper from '../../component/waveWrapper/WaveWrapper'
+import Footer from '../../component/footer/Footer'
 
 const benefitsList = [
     {
@@ -102,18 +103,18 @@ const casesBoxList = [
     },
 ]
 
-const comparisonList =[
+const comparisonList = [
     {
-        id:1,
-        feature:"Speed of Construction",
-        prefab:"30–60% faster – most structures ready in weeks",
-        conventional:"Slower – often takes several months"
+        id: 1,
+        feature: "Speed of Construction",
+        prefab: "30–60% faster – most structures ready in weeks",
+        conventional: "Slower – often takes several months"
     },
     {
-        id:2,
-        feature:"Speed of Construction",
-        prefab:"30–60% faster – most structures ready in weeks",
-        conventional:"Slower – often takes several months"
+        id: 2,
+        feature: "Speed of Construction",
+        prefab: "30–60% faster – most structures ready in weeks",
+        conventional: "Slower – often takes several months"
     },
 ]
 const KeyBenefits = () => {
@@ -126,7 +127,7 @@ const KeyBenefits = () => {
             <section className="comparison-section">
                 <Container>
                     <div className="comparison-container">
-                    <h2>Prefab vs Conventional: A Side-by-Side Comparison</h2>
+                        <h2>Prefab vs Conventional: A Side-by-Side Comparison</h2>
                         <div className='comparison-container-box'>
                             <Table responsive bordered hover>
                                 <thead className='common-table-thead'>
@@ -136,14 +137,14 @@ const KeyBenefits = () => {
                                         <th>Conventional Construction</th>
                                     </tr>
                                 </thead>
-                                <tbody className='common-table-tbody'>                           
-                                        {comparisonList.map((compare,index) => (
-                                            <tr key={index.id}>
-                                                <td>{compare.feature}</td>
-                                                <td>{compare.prefab}</td>
-                                                <td>{compare.conventional}</td>
-                                            </tr>
-                                        ))}                           
+                                <tbody className='common-table-tbody'>
+                                    {comparisonList.map((compare, index) => (
+                                        <tr key={index.id}>
+                                            <td>{compare.feature}</td>
+                                            <td>{compare.prefab}</td>
+                                            <td>{compare.conventional}</td>
+                                        </tr>
+                                    ))}
                                 </tbody>
                             </Table>
                         </div>

@@ -57,6 +57,14 @@ hr {
 
 /**************************** Top Header design Start *************************/
 
+.header{
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0px;
+  z-index: 9999;
+}
+
 .header-top {
   width: 100%;
   display: flex;
@@ -179,7 +187,7 @@ hr {
 }
 
 /* Submenu styles */
-.submenu {
+/* .submenu {
   position: absolute;
   top: 100%;
   left: 0;
@@ -191,6 +199,27 @@ hr {
   padding: 0.5rem 0;
   animation: fadeIn 0.6s ease-in-out;
   overflow: hidden;
+} */
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #f8f9fa;
+  min-width: 150px;
+  display: block;
+  white-space: nowrap;
+  z-index: 1000;
+  padding: 0.5rem 0;
+  animation: fadeIn 0.3s ease-in-out;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navitem-wrapper:last-child .submenu,
+.navitem-wrapper:nth-last-child(2) .submenu {
+  left: auto;
+  right: 0;
 }
 
 .submenu a {

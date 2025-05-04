@@ -1,15 +1,18 @@
 import React from 'react'
-import NavBarHead from '../../component/navbar/NavBarHead'
-import Footer from '../../component/footer/Footer'
-import CounterSection from '../../component/counter/CounterSection'
-import OurVisionMission from '../../component/ourVisionMission/OurVisionMission'
-import WhoWeAre from '../../component/whoWeAre/WhoWeAre'
-import WaveWrapper from '../../component/waveWrapper/WaveWrapper'
-import BannerSection from '../../component/bannerSection/bannerSection'
 import { Container } from 'reactstrap'
 import { FaWarehouse } from 'react-icons/fa'
-import TestimonialSection from '../../component/testimonialSection/TestimonialSection'
+
+import NavBarHead from '../../component/navbar/NavBarHead'
+import BannerSection from '../../component/bannerSection/BannerSection'
+import WhoWeAre from '../../component/whoWeAre/WhoWeAre'
+import OurVisionMission from '../../component/ourVisionMission/OurVisionMission'
+import CounterSection from '../../component/counter/CounterSection'
 import TrustSlider from '../../component/trustSlider/trustSlider'
+import TestimonialSection from '../../component/testimonialSection/TestimonialSection'
+import WaveWrapper from '../../component/waveWrapper/WaveWrapper'
+import Footer from '../../component/footer/Footer'
+
+import { motion } from 'framer-motion';
 
 const infoBoxList = [
     {
@@ -35,8 +38,41 @@ const infoBoxList = [
 ]
 
 const IntroductionToDIYPreFabSolutions = () => {
+    const slideVariants = {
+        initial: {
+            x: '100vw',
+            opacity: 0,
+        },
+        animate: {
+            x: 0,
+            opacity: 1,
+            transition: {
+                type: 'spring',
+                stiffness: 60,
+                damping: 20,
+                duration: 0.5,
+            },
+        },
+        exit: {
+            x: '-100vw',
+            opacity: 0,
+            transition: {
+                type: 'spring',
+                stiffness: 60,
+                damping: 20,
+                duration: 0.5,
+            },
+        },
+    };
+
     return (
-        <div>
+        <motion.div
+            variants={slideVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            style={{ position: 'absolute', width: '100%' }}
+        >
             <NavBarHead />
             <BannerSection title={"Introduction To DIY PreFab Solutions"} description={"Crafting Engineering Excellence"} />
             <WhoWeAre />
@@ -63,7 +99,7 @@ const IntroductionToDIYPreFabSolutions = () => {
 
             <WaveWrapper />
             <Footer />
-        </div>
+        </motion.div>
     )
 }
 
