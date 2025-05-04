@@ -17,36 +17,68 @@ import { IoCloseSharp } from 'react-icons/io5';
 
 const navItems = [
     {
-        title: 'Home',
-        submenu: ['Overview', 'Features', 'Updates'],
+        title: "Home",
+        submenu: [
+            { id: 1, title: "Introduction To DIY PreFab Solutions", link: "/home/introToDiy" },
+            { id: 2, title: "Key Benefits OF Prefab Construction", link: "/home/keyBenefits" },
+            { id: 3, title: "Featured Projects", link: "/home/projects" },
+        ],
     },
     {
         title: 'About Us',
-        submenu: ['Our Story', 'Vision & Mission'],
+        submenu: [
+            { id: 1, title: "Introduction To DIY PreFab Solutions", link: "" },
+            { id: 2, title: "Key Benefits OF Prefab Construction", link: "" },
+            { id: 3, title: "Featured Projects", link: "" },
+        ],
     },
     {
         title: 'Products & Services',
-        submenu: ['Web Development', 'App Development', 'SEO', 'Consulting'],
+        submenu: [
+            { id: 1, title: "Introduction To DIY PreFab Solutions", link: "" },
+            { id: 2, title: "Key Benefits OF Prefab Construction", link: "" },
+            { id: 3, title: "Featured Projects", link: "" },
+        ],
     },
     {
         title: 'Applications',
-        submenu: ['Completed', 'Ongoing'],
+        submenu: [
+            { id: 1, title: "Introduction To DIY PreFab Solutions", link: "" },
+            { id: 2, title: "Key Benefits OF Prefab Construction", link: "" },
+            { id: 3, title: "Featured Projects", link: "" },
+        ],
     },
     {
         title: 'Projects & Studies',
-        submenu: ['Completed', 'Ongoing'],
+        submenu: [
+            { id: 1, title: "Introduction To DIY PreFab Solutions", link: "" },
+            { id: 2, title: "Key Benefits OF Prefab Construction", link: "" },
+            { id: 3, title: "Featured Projects", link: "" },
+        ],
     },
     {
         title: 'Blog News',
-        submenu: ['Open Positions', 'Internships', 'Life at Company'],
+        submenu: [
+            { id: 1, title: "Introduction To DIY PreFab Solutions", link: "" },
+            { id: 2, title: "Key Benefits OF Prefab Construction", link: "" },
+            { id: 3, title: "Featured Projects", link: "" },
+        ],
     },
     {
         title: 'Careers',
-        submenu: ['Open Positions', 'Internships', 'Life at Company'],
+        submenu: [
+            { id: 1, title: "Introduction To DIY PreFab Solutions", link: "" },
+            { id: 2, title: "Key Benefits OF Prefab Construction", link: "" },
+            { id: 3, title: "Featured Projects", link: "" },
+        ],
     },
     {
         title: 'Contact Us',
-        submenu: ['Support', 'Sales', 'Partnerships'],
+        submenu: [
+            { id: 1, title: "Introduction To DIY PreFab Solutions", link: "" },
+            { id: 2, title: "Key Benefits OF Prefab Construction", link: "" },
+            { id: 3, title: "Featured Projects", link: "" },
+        ],
     },
 ];
 
@@ -142,9 +174,11 @@ const NavBarHead = () => {
                                     <div className="submenu desktop-submenu">
                                         <Nav vertical>
                                             {item.submenu.map((subItem, subIndex) => (
-                                                <NavItem key={subIndex}>
-                                                    <NavLink href="#">{subItem}</NavLink>
-                                                </NavItem>
+                                                <NavLink tag={Link} to={subItem.link} className={({ isActive }) =>
+                                                    isActive ? "submenu-link active-link" : "submenu-link"
+                                                } key={subIndex.id}>
+                                                    {subItem.title}
+                                                </NavLink>
                                             ))}
                                         </Nav>
                                     </div>
@@ -164,7 +198,7 @@ const NavBarHead = () => {
             <div className={`drawer ${isDrawerOpen ? 'open' : ''}`}>
                 <div className='text-end'>
                     <Button onClick={toggleDrawer} className="close-btn">
-                        <IoCloseSharp className='side-bar-close-btn-icon'/>
+                        <IoCloseSharp className='side-bar-close-btn-icon' />
                     </Button>
                 </div>
                 <Nav vertical className="p-4">
@@ -178,9 +212,9 @@ const NavBarHead = () => {
                             {/* Submenu for mobile with animation */}
                             <div className={`mobile-submenu ${mobileOpenSubmenu === index ? 'open' : ''}`}>
                                 {item.submenu.map((subItem, subIndex) => (
-                                    <NavItem key={subIndex}>
-                                        <NavLink href="#">{subItem}</NavLink>
-                                    </NavItem>
+                                    <NavLink tag={Link} to={subItem.link}>
+                                        {subItem.title}
+                                    </NavLink>
                                 ))}
                             </div>
                         </div>

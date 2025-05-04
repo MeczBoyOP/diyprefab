@@ -48,7 +48,7 @@
 }
 
 /************  Navbar responsive ************/
-@media (max-width:1399px) {
+@media (max-width: 1399px) {
   .navlink-custom {
     font-size: 12px !important;
   }
@@ -220,9 +220,18 @@
   .footer-bottom-links a {
     font-size: 12px;
   }
+  .real-world-cases-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .benefits-cases-container{
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
+  .input-button-wrapper {
+    width: 100%;
+  }
   .container-slider {
     height: 300px;
   }
@@ -428,6 +437,19 @@
     flex-direction: column;
     gap: 10px;
   }
+
+  /* Information Page */
+
+  .left-testimony-box {
+    margin-bottom: 20px;
+  }
+
+  .real-world-cases-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .benefits-cases-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 @media (max-width: 575px) {
@@ -614,5 +636,35 @@
     width: 80px !important;
     height: 60px !important;
     padding: 10px !important;
+  }
+  .input-button-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 6px;
+  }
+
+  .styled-button {
+    width: fit-content;
+  }
+
+  .left-testimony-box {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .left-testimony-box h5 {
+    font-size: 10px;
+  }
+  .left-testimony-box h3 {
+    font-size: 14px;
+  }
+  .left-testimony-box p {
+    font-size: 12px;
+  }
+  .right-testimony-box {
+    padding: 10px;
+  }
+  .information-container {
+    grid-template-columns: repeat(1, 1fr);
   }
 }

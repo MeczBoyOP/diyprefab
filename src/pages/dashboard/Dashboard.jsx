@@ -16,6 +16,11 @@ import { HiOutlineClipboardDocumentList } from 'react-icons/hi2'
 import ContactForm from '../../component/contactform/ContactForm'
 import ContactImg from '../../assets/images/undraw_letter_ombg.svg'
 import DashboardSlider from '../../component/dashboardslider/DashboardSlider'
+import WhoWeAre from '../../component/whoWeAre/WhoWeAre'
+import OurVisionMission from '../../component/ourVisionMission/OurVisionMission'
+import CounterSection from '../../component/counter/CounterSection'
+import TrustSlider from '../../component/trustSlider/trustSlider'
+import WaveWrapper from '../../component/waveWrapper/WaveWrapper'
 
 const Dashboard = () => {
     const chooseUs = [
@@ -113,50 +118,7 @@ const Dashboard = () => {
                 </Container>
             </section>
 
-            <section className="we-are-section">
-                <Container>
-                    <Row>
-                        <Col md={12} lg={6}>
-                            <div className="we-are-left">
-                                <h6>Who We Are</h6>
-                                <h2>Your Trusted and Visionary Partner in Engineering Excellence</h2>
-                                <p>Welcome to <span>DIY PreFab</span>, where innovation meets efficiency in the prefabrication industry. We provide cutting-edge, <span>high-quality PEB and modular structures</span>, ensuring faster construction, reduced costs, and unmatched durability. Our <span>expert engineers</span> are ready to guide you with a <span>free design & estimate consultation</span> to find the best solution for your needs. Plus, we offer a <span>free-of-cost quality verification check</span> to guarantee the highest industry standards. <br />
-                                    <span>Explore our 3D Smart Building Planner</span>, an intuitive digital tool that allows you to <span>visualize, customize, and refine</span> your prefabricated structure in real time. This immersive platform empowers you to <span>experiment with layouts, optimize material usage, and perfect your design before execution</span>—ensuring efficiency, cost-effectiveness, and sustainability from day one.</p>
-                                <div className="we-are-left-content-container">
-                                    <div className="we-are-left-content-box">
-                                        <FaHelmetSafety className='performance-icons' />
-                                        <h4>Professional Expert</h4>
-                                        <p>Prefab buildings empower professional experts with faster deployment, design flexibility, and cost-effective construction solutions.</p>
-                                    </div>
-                                    <div className="we-are-left-content-box">
-                                        <MdSupportAgent className='performance-icons' />
-                                        <h4>24/7 Premium Support</h4>
-                                        <p>Experience uninterrupted service and peace of mind with 24/7 premium support tailored for your prefab building needs.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </Col>
-                        <Col md={12} lg={6}>
-                            <div className="we-are-right">
-                                <div className="we-are-back-image-section">
-                                    <div className="we-are-back-right-content-box">
-                                        <div className="we-are-back-right-content">
-                                            <h4>7+</h4>
-                                            <p>Years of Experience</p>
-                                        </div>
-                                        <div className="divider"></div>
-                                        <div className="we-are-back-right-content">
-                                            <p>Cutting-Edge Expertise</p>
-                                            <p>Holistic Solutions Approach</p>
-                                            <p>Client-Centric Collaboration</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </Col>
-                    </Row>
-                </Container>
-            </section>
+            <WhoWeAre />
 
             <section className="we-do-section">
                 <Container>
@@ -193,41 +155,9 @@ const Dashboard = () => {
                 </Container>
             </section>
 
-            <section className="our-vision-mission-section">
-                <Container>
-                    <Row>
-                        <Col md={6} className='mb-md-0 mb-sm-1'>
-                            <div className="our-vision-container">
-                                <h6>Our Vision</h6>
-                                <hr />
-                                <p>We envision a future where every person, regardless of income or location, has access to strong, sustainable, and customizable buildings.</p>
-                                <p>No middlemen. No delays. Just transparent pricing, modular design, and unmatched speed.</p>
-                                <p>DIY PreFab is building the future — one kit at a time.</p>
-                                <Button className='common-btn'>Learn More</Button>
-                            </div>
-                        </Col>
-                        <Col md={6}>
-                            <div className="our-mission-container our-vision-container">
-                                <h6>Our Mission</h6>
-                                <hr />
-                                <p>To simplify and accelerate construction by offering high-quality, customizable, and affordable pre engineered building kits that empower individuals, businesses, and communities to build with confidence.</p>
-                                <Button className='common-btn'>Learn More</Button>
-                            </div>
-                        </Col>
-                    </Row>
-                </Container>
-            </section>
+            <OurVisionMission />
 
-            <section className="counter-section">
-                <Container>
-                    <div className="counter-section-container">
-                        <Counter end={96} duration={1200} label="Cases Solved" />
-                        <Counter end={20} duration={1700} label="Project Done" showPercent={false} />
-                        <Counter end={100} duration={2200} label="Happy Client" />
-                        <Counter end={100} duration={2500} label="Timeline Delivery" />
-                    </div>
-                </Container>
-            </section>
+            <CounterSection />
 
             <section className="why-choose-us">
                 <Container>
@@ -326,25 +256,7 @@ const Dashboard = () => {
                 </Container>
             </section>
 
-            <section className="trust-slider">
-                <Container>
-                    <Row className='align-items-center'>
-                        <Col md={6}>
-                            <div className="trust-slider-container">
-                                <h2>Trusted by Engineering Visionaries and Industrial Innovators Worldwide</h2>
-                                <p>Trusted by engineering and industrial leaders for delivering innovative, reliable, and scalable prefab building solutions.</p>
-                                <hr style={{ borderColor: "#001524", borderWidth: "1px" }} />
-                                {/* Slider Will be here... */}
-                            </div>
-                        </Col>
-                        <Col md={6}>
-                            <div className="trust-map-img-box">
-                                <img src={ImagePath.Map} alt="map" className='img-fluid' />
-                            </div>
-                        </Col>
-                    </Row>
-                </Container>
-            </section>
+            <TrustSlider />
 
             <section className="send-message">
                 <Container>
@@ -361,22 +273,7 @@ const Dashboard = () => {
                 </Container>
             </section>          
 
-            <div className="wave-wrapper">
-                <div className="wave"></div>
-                <div className="wave"></div>
-                <div className="wave"></div>
-                <Container>
-                    <div className="sign-up-content">
-                        <h5 style={{ position: "relative", zIndex: 2 }}>
-                            Stay updated with our latest news, promotions, and tech insights.
-                        </h5>
-                        <div className="input-button-wrapper">
-                            <input type="text" placeholder="Email" className="styled-input" />
-                            <button className="styled-button">Submit</button>
-                        </div>
-                    </div>
-                </Container>
-            </div>
+            <WaveWrapper />
 
 
             <Footer />

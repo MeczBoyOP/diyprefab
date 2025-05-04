@@ -24,7 +24,7 @@ hr {
   background-color: #001524 !important;
   color: #ffffff;
   padding: 6px 20px !important;
-  border: 1px solid #FFFFFF !important;
+  border: 1px solid #ffffff !important;
   border-radius: 0px;
   font-size: 12px !important;
   font-weight: 500;
@@ -82,12 +82,12 @@ hr {
   color: #ffffff;
   transition: all 0.3s ease;
 }
-.nav-link.side-nav-box{
-  color: #FFFFFF;
+.nav-link.side-nav-box {
+  color: #ffffff;
 }
 .side-nav-bar-arrow-icon {
   font-size: 20px;
-  color: #FFFFFF;
+  color: #ffffff;
   transition: all 0.3s ease;
 }
 .contact-info-box:hover .top-header-icon {
@@ -162,8 +162,8 @@ hr {
   left: 10px;
   border: none !important;
 }
-.side-bar-close-btn-icon{
-  color: #FFFFFF;
+.side-bar-close-btn-icon {
+  color: #ffffff;
   font-size: 20px;
 }
 
@@ -185,9 +185,12 @@ hr {
   left: 0;
   background: #f8f9fa;
   min-width: 150px;
+  display: block;
+  white-space: nowrap;
   z-index: 1000;
   padding: 0.5rem 0;
   animation: fadeIn 0.6s ease-in-out;
+  overflow: hidden;
 }
 
 .submenu a {
@@ -291,13 +294,13 @@ hr {
   overflow: hidden;
   transition: max-height 0.3s ease;
 }
-.mobile-submenu.nav-link{
+.mobile-submenu.nav-link {
   font-size: 12px;
   color: #00152466;
 }
 
 .mobile-submenu.open {
-  max-height: 500px; 
+  max-height: 500px;
 }
 
 /* Desktop submenu */
@@ -344,7 +347,7 @@ hr {
   font-size: 12px;
 }
 
-.nav-bar-menu-open-button{
+.nav-bar-menu-open-button {
   background-color: transparent;
   border: 1px solid #ffffff;
 }
@@ -661,7 +664,7 @@ hr {
 }
 .divider {
   width: 1px;
-  height: 100%;
+  height: 100px;
   background-color: #d9d9d9;
 }
 .we-are-left-content-container {
@@ -726,7 +729,6 @@ hr {
   font-size: 3rem;
 }
 /**************************** we do design End *************************/
-
 
 /**************************** Our Vision & Mission design Start *************************/
 
@@ -1381,7 +1383,7 @@ body {
   overflow: hidden;
   background: #0f0f3e;
 }
-.sign-up-content{
+.sign-up-content {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -1390,7 +1392,7 @@ body {
   gap: 20px;
 }
 .sign-up-content h5 {
-  color: #FFFFFF !important;
+  color: #ffffff !important;
   font-size: 16px;
   font-weight: 500;
   margin-bottom: 0px;
@@ -1403,7 +1405,7 @@ body {
   left: 0;
   width: 200%;
   padding: 60px;
-  background: rgba(255, 255, 255, 0.25);
+  background: #ffffff40;
   border-radius: 1000% 1000% 0 0;
   opacity: 0.8;
   animation: wave 10s -3s linear infinite;
@@ -1440,13 +1442,17 @@ body {
   }
 }
 
-.input-button-wrapper {
+/* .input-button-wrapper {
   display: flex;
   width: 100%;
   max-width: 400px;
+} */
+.input-button-wrapper {
+  display: flex;
+  max-width: 100%;
 }
 
-.styled-input {
+/* .styled-input {
   flex: 1;
   padding: 4px 10px;
   font-size: 1rem;
@@ -1455,6 +1461,17 @@ body {
   border-radius: 0px;
   outline: none;
   z-index: 3;
+} */
+.styled-input {
+  flex: 1 1 100%; /* allow shrinking and wrapping */
+  min-width: 0; /* prevent overflow in flex containers */
+  box-sizing: border-box;
+  padding: 4px 10px;
+}
+
+.styled-button {
+  flex: 0 0 auto;
+  white-space: nowrap; /* prevent text wrapping inside button */
 }
 .styled-input.mb-3 {
   margin-bottom: 0px !important;
@@ -1475,3 +1492,191 @@ body {
   background-color: #0056b3;
 }
 
+/******************** Banner Section Design **********************/
+
+.banner-pattern-wrapper {
+  width: 100%;
+  max-height: 400px;
+  height: 100%;
+  background-color: #342e2e;
+  background-image: url("../src/assets/images/pattern-4.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
+}
+.banner-content {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.banner-content h3 {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0px;
+  text-align: center;
+}
+.banner-content p {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+/******************** Introduction Page Design **********************/
+
+.information-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.real-world-cases-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.benefits-cases-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.info-box {
+  border: 1px solid #d9d9d9;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.info-box h6 {
+  color: #001524;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 0px;
+}
+.info-box p {
+  color: #001524;
+  font-size: 14px;
+  margin-bottom: 0px;
+}
+.info-box-icons {
+  color: #001524;
+  font-size: 2rem;
+}
+
+/******************** Testimony section Design **********************/
+
+.testimonial-section {
+  width: 100%;
+  padding: 20px 0;
+  background-color: #f9f9f9;
+  margin-bottom: 20px;
+}
+
+.left-testimony-box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.left-testimony-box h6 {
+  color: #001524;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0px;
+}
+
+.left-testimony-box h3 {
+  color: #001524;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0px;
+}
+
+.left-testimony-box p {
+  color: #333;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.right-testimony-box {
+  background: #ffffff;
+  padding: 30px 20px;
+  box-shadow: 0 2px 10px #d9d9d9;
+  min-height: 200px;
+  height: 100%;
+}
+
+.testimonial-card {
+  background: transparent;
+}
+
+.testimonial-message {
+  color: #555;
+  font-size: 16px;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.testimonial-name {
+  font-size: 18px;
+  color: #001524;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.testimonial-role {
+  font-size: 13px;
+  color: #777;
+}
+
+.benefit-page-h2 {
+  text-align: center;
+  color: #001524;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.comparison-container h2 {
+  color: #001524;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.comparison-container-box {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+thead tr th {
+  font-size: 16px;
+  background-color: #f5f5f5 !important;
+}
+.common-table-tbody tr td {
+  font-size: 13px;
+}
+
+.common-table-tbody tr:nth-child(odd) td {
+  background-color: #ffffff !important;
+}
+
+.common-table-tbody tr:nth-child(even) td {
+  background-color: #f5f5f5 !important;
+}
