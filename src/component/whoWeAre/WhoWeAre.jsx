@@ -2,6 +2,7 @@ import React from 'react'
 import { FaHelmetSafety } from 'react-icons/fa6'
 import { MdSupportAgent } from 'react-icons/md'
 import { Col, Container, Row } from 'reactstrap'
+import ImagePath from '../../assets/ImagePath'
 
 const WhoWeAre = () => {
   return (
@@ -29,8 +30,9 @@ const WhoWeAre = () => {
                 </div>
             </Col>
             <Col md={12} lg={6}>
-                <div className="we-are-right">
+                <div className="we-are-right">  
                     <div className="we-are-back-image-section">
+                    <img src={ImagePath.WRB} alt='we-are-back' className='img-fluid'></img>
                         <div className="we-are-back-right-content-box">
                             <div className="we-are-back-right-content">
                                 <h4>7+</h4>

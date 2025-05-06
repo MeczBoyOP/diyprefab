@@ -12,8 +12,6 @@ import TestimonialSection from '../../component/testimonialSection/TestimonialSe
 import WaveWrapper from '../../component/waveWrapper/WaveWrapper'
 import Footer from '../../component/footer/Footer'
 
-import { motion } from 'framer-motion';
-
 const infoBoxList = [
     {
         id: 1,
@@ -66,13 +64,7 @@ const IntroductionToDIYPreFabSolutions = () => {
     };
 
     return (
-        <motion.div
-            variants={slideVariants}
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            style={{ position: 'absolute', width: '100%' }}
-        >
+        <div>
             <NavBarHead />
             <BannerSection title={"Introduction To DIY PreFab Solutions"} description={"Crafting Engineering Excellence"} />
             <WhoWeAre />
@@ -99,7 +91,7 @@ const IntroductionToDIYPreFabSolutions = () => {
 
             <WaveWrapper />
             <Footer />
-        </motion.div>
+        </div>
     )
 }
 

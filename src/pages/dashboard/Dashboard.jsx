@@ -9,7 +9,7 @@ import { FaHelmetSafety } from 'react-icons/fa6'
 import { MdEngineering, MdFactory, MdSupportAgent } from 'react-icons/md'
 
 import Counter from '../../component/counter/Counter'
-import { FaLayerGroup, FaLeaf, FaSortAmountUp } from 'react-icons/fa'
+import { FaLayerGroup, FaLeaf, FaPlay, FaSortAmountUp } from 'react-icons/fa'
 import { IoLogoElectron, IoSettingsOutline } from 'react-icons/io5'
 import { GiCargoCrane, GiMineTruck } from 'react-icons/gi'
 import { HiOutlineClipboardDocumentList } from 'react-icons/hi2'
@@ -24,6 +24,10 @@ import WaveWrapper from '../../component/waveWrapper/WaveWrapper'
 import { VscFileSubmodule } from 'react-icons/vsc'
 
 const Dashboard = () => {
+    const [OpenVideo, setOpenVideo] = useState(false)
+    const handleOpenVideo = () => {
+        setOpenVideo(!OpenVideo)
+    }
     const chooseUs = [
         {
             id: 1,
@@ -94,15 +98,17 @@ const Dashboard = () => {
         <div>
             <NavBarHead />
 
-            <DashboardSlider />
+            {/* <DashboardSlider /> */}
 
             <section className="performance-section">
                 <Container>
                     <div className="video-section-container">
                         <div className="video-section">
                             <img src={ImagePath.Performance} alt="Video" loading="lazy" className='img-fluid' />
-                            <div className="video-play-button">
-                                <IoIosPlayCircle className='performance-video-icons' />
+                            <div className='play-button'>
+                                <div className="play-button-box" onClick={handleOpenVideo}>
+                                    <FaPlay className='play-button-icon' />
+                                </div>
                             </div>
                         </div>
                         <div className="performance-content-box">
@@ -188,21 +194,16 @@ const Dashboard = () => {
                                 <Col md={6}>
                                     <div className="why-choose-right-content-container">
                                         <img src={ImagePath.ChooseUsVideo} alt="Industry-Video" className='img-fluid' />
-                                        <div className="hover-content-section">
-                                            <h4>Smart Building</h4>
-                                            <p>Explore the future of construction with our smart building solutions, integrating technology and design for optimal efficiency.</p>
-                                            <Button className='btn common-btn'>Learn More</Button>
+                                        <div className='play-button'>
+                                            <div className="play-button-box" onClick={handleOpenVideo}>
+                                                <FaPlay className='play-button-icon' />
+                                            </div>
                                         </div>
                                     </div>
                                 </Col>
                                 <Col md={6}>
                                     <div className="why-choose-right-content-container">
                                         <img src={ImagePath.ChooseUsImg} alt="Industry-Video" className='img-fluid' />
-                                        <div className="hover-content-section">
-                                            <h4>Smart Building</h4>
-                                            <p>Explore the future of construction with our smart building solutions, integrating technology and design for optimal efficiency.</p>
-                                            <Button className='btn common-btn'>Learn More</Button>
-                                        </div>
                                     </div>
                                 </Col>
                             </Row>
@@ -214,10 +215,13 @@ const Dashboard = () => {
             <section className="we-offer" style={{
                 backgroundImage: `url(${ImagePath.WeOffer})`, backgroundSize: 'cover',
                 backgroundPosition: 'center',
-                padding: '50px 0',
-                marginBottom: '20px',
+                padding: '60px 0',
             }}>
                 <Container>
+                    <div className='we-offer-header'>
+                        <p>What WE oFFER</p>
+                        <h4>Engineering solutions for all industries</h4>
+                    </div>
                     <div className="we-offer-container">
                         {weOfferList.map((item, index) => (
                             <div className="we-offer-box" key={index}>
@@ -226,8 +230,8 @@ const Dashboard = () => {
                                         <div className="we-offer-icon">{item.icon}</div>
                                         <div className="we-offer-content">
                                             <h4>{item.title}</h4>
+                                            <p>{item.description}</p>
                                         </div>
-                                        <Button className="common-btn">See More</Button>
                                     </div>
                                     <div className="we-offer-hover-box">
                                         <div className="we-offer-hover-content">
@@ -265,19 +269,29 @@ const Dashboard = () => {
                         <Col md={12} lg={8}>
                             <ContactForm />
                         </Col>
-                        <Col lg={4}>
-                            <div className="contact-form-img-box">
-                                <img src={ContactImg} alt="" className='img-fluid' />
-                            </div>
-                        </Col>
                     </Row>
                 </Container>
-            </section>          
+            </section>
 
             <WaveWrapper />
 
 
             <Footer />
+            {OpenVideo ? (
+                <div className='play-video-container' onClick={handleOpenVideo}>
+                    <button className="close-video-btn">✖</button>
+                    <div className="video-wrapper">
+                        <iframe
+                            width="800"
+                            height="450"
+                            src="../src/assets/video\videoplayback.webm"
+                            title="Intro Video"
+                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                        ></iframe>
+                    </div>
+                </div>
+            ) : null}
         </div>
     )
 }
