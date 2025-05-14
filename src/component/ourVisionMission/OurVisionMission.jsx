@@ -28,7 +28,7 @@ const OurVisionMission = () => {
                             <p>We envision a future where every person, regardless of income or location, has access to strong, sustainable, and customizable buildings.</p>
                             <p>No middlemen. No delays. Just transparent pricing, modular design, and unmatched speed.</p>
                             <p>DIY PreFab is building the future — one kit at a time.</p>
-                            <Button className='common-btn'>Learn More</Button>
+                            {/* <Button className='common-btn'>Learn More</Button> */}
                         </div>
                     </Col>
                     <Col md={6}>
@@ -36,7 +36,7 @@ const OurVisionMission = () => {
                             <h6>Our Mission</h6>
                             <hr />
                             <p>To simplify and accelerate construction by offering high-quality, customizable, and affordable pre engineered building kits that empower individuals, businesses, and communities to build with confidence.</p>
-                            <Button className='common-btn'>Learn More</Button>
+                            {/* <Button className='common-btn'>Learn More</Button> */}
                         </div>
                     </Col>
                 </Row>

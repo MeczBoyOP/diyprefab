@@ -56,9 +56,9 @@ const TestimonialSection = () => {
                                     <Slider {...sliderSettings}>
                                         {testimonials.map((testimonial, index) => (
                                             <div key={index.id}>
-                                                <Card className="mx-2 my-3 text-center border-0">
+                                                <Card className="mx-2 my-3 border-0">
                                                     <CardBody>
-                                                        <p className="mb-3 fst-italic text-muted">
+                                                        <p style={{fontWeight: "700", fontSize: "18px", color: "#000"}} className="mb-3 fst-italic text-muted">
                                                             “{testimonial.message}”
                                                         </p>
                                                         <h5 className="mb-1">{testimonial.name}</h5>

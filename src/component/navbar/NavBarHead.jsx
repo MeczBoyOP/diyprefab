@@ -21,16 +21,16 @@ const navItems = [
         submenu: [
             { id: 1, title: "Introduction To DIY PreFab Solutions", link: "/home/introToDiy" },
             { id: 2, title: "Key Benefits OF Prefab Construction", link: "/home/keyBenefits" },
-            { id: 3, title: "Featured Projects", link: "/home/projects" },
+            { id: 3, title: "Featured Projects", link: "/home/featuredProjects" },
         ],
     },
     {
         title: 'About Us',
         submenu: [
-            { id: 1, title: "Company Overview", link: "" },
-            { id: 2, title: "Our Vision & Mission", link: "" },
-            { id: 3, title: "Sustainability &Eco-Friendly Initiatives", link: "" },
-            { id: 4, title: "Manufacturing Process", link: "" },
+            { id: 1, title: "Company Overview", link: "/about/companyoverview" },
+            { id: 2, title: "Our Vision & Mission", link: "/about/visionmission" },
+            { id: 3, title: "Sustainability &Eco-Friendly Initiatives", link: "/about/sustainability" },
+            { id: 4, title: "Manufacturing Process", link: "/about/manufacturingprocess" },
         ],
     },
     {
@@ -45,19 +45,19 @@ const navItems = [
     {
         title: 'Applications',
         submenu: [
-            { id: 1, title: "Residential", link: "" },
-            { id: 2, title: "Commercial", link: "" },
-            { id: 3, title: "Industrial", link: "" },
-            { id: 4, title: "Educational Institutions", link: "" },
-            { id: 5, title: "Healthcare Facilities", link: "" },
+            { id: 1, title: "Residential", link: "/application/residential" },
+            { id: 2, title: "Commercial", link: "/application/commercial" },
+            { id: 3, title: "Industrial", link: "/application/industrial" },
+            { id: 4, title: "Educational Institutions", link: "/application/education" },
+            { id: 5, title: "Healthcare Facilities", link: "/application/healthcarefacilities" },
         ],
     },
     {
         title: 'Projects & Studies',
         submenu: [
-            { id: 1, title: "Success Stories", link: "" },
-            { id: 2, title: "Client Testimonials", link: "" },
-            { id: 3, title: "Project Gallery", link: "" },
+            { id: 1, title: "Success Stories", link: "/project&casestudies/sucessstories" },
+            { id: 2, title: "Client Testimonials", link: "/project&casestudies/client-testimonial" },
+            { id: 3, title: "Project Gallery", link: "/project&casestudies/project-gallery" },
         ],
     },
     {

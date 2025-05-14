@@ -1,299 +1,451 @@
-import React, { useState } from 'react'
-import Footer from '../../component/footer/Footer'
-import NavBarHead from '../../component/navbar/NavBarHead'
-import { Button, Carousel, CarouselControl, CarouselIndicators, CarouselItem, Col, Container, Input, Row } from 'reactstrap'
-import { TbSettingsBolt, TbSettingsUp } from 'react-icons/tb'
-import ImagePath from '../../assets/ImagePath'
-import { IoIosPlayCircle } from 'react-icons/io'
-import { FaHelmetSafety } from 'react-icons/fa6'
-import { MdEngineering, MdFactory, MdSupportAgent } from 'react-icons/md'
+import React, { useEffect, useState } from "react";
+import Footer from "../../component/footer/Footer";
+import NavBarHead from "../../component/navbar/NavBarHead";
+import {
+  Button,
+  Carousel,
+  CarouselControl,
+  CarouselIndicators,
+  CarouselItem,
+  Col,
+  Container,
+  Input,
+  Row,
+} from "reactstrap";
+import { TbSettingsBolt, TbSettingsUp } from "react-icons/tb";
+import ImagePath from "../../assets/ImagePath";
+import { IoIosPlayCircle } from "react-icons/io";
+import { FaHelmetSafety } from "react-icons/fa6";
+import { MdEngineering, MdFactory, MdSupportAgent } from "react-icons/md";
 
-import Counter from '../../component/counter/Counter'
-import { FaLayerGroup, FaLeaf, FaPlay, FaSortAmountUp } from 'react-icons/fa'
-import { IoLogoElectron, IoSettingsOutline } from 'react-icons/io5'
-import { GiCargoCrane, GiMineTruck } from 'react-icons/gi'
-import { HiOutlineClipboardDocumentList } from 'react-icons/hi2'
-import ContactForm from '../../component/contactform/ContactForm'
-import ContactImg from '../../assets/images/undraw_letter_ombg.svg'
-import DashboardSlider from '../../component/dashboardslider/DashboardSlider'
-import WhoWeAre from '../../component/whoWeAre/WhoWeAre'
-import OurVisionMission from '../../component/ourVisionMission/OurVisionMission'
-import CounterSection from '../../component/counter/CounterSection'
-import TrustSlider from '../../component/trustSlider/TrustSlider'
-import WaveWrapper from '../../component/waveWrapper/WaveWrapper'
-import { VscFileSubmodule } from 'react-icons/vsc'
+import Counter from "../../component/counter/Counter";
+import { FaLayerGroup, FaLeaf, FaPlay, FaSortAmountUp } from "react-icons/fa";
+import { IoLogoElectron, IoSettingsOutline } from "react-icons/io5";
+import { GiCargoCrane, GiMineTruck } from "react-icons/gi";
+import { HiOutlineClipboardDocumentList } from "react-icons/hi2";
+import ContactForm from "../../component/contactform/ContactForm";
+import ContactImg from "../../assets/images/undraw_letter_ombg.svg";
+import DashboardSlider from "../../component/dashboardslider/DashboardSlider";
+import WhoWeAre from "../../component/whoWeAre/WhoWeAre";
+import OurVisionMission from "../../component/ourVisionMission/OurVisionMission";
+import CounterSection from "../../component/counter/CounterSection";
+import TrustSlider from "../../component/trustSlider/TrustSlider";
+import WaveWrapper from "../../component/waveWrapper/WaveWrapper";
+import { VscFileSubmodule } from "react-icons/vsc";
+
+import Slider from "react-slick";
+
+const sliderImages = [
+  { id: 1, image: ImagePath.MainSlider1 },
+  { id: 2, image: ImagePath.Slider2 },
+  { id: 3, image: ImagePath.Slider3 },
+  { id: 4, image: ImagePath.Slider4 },
+  { id: 5, image: ImagePath.Slider5 },
+];
 
 const Dashboard = () => {
-    const [OpenVideo, setOpenVideo] = useState(false)
-    const handleOpenVideo = () => {
-        setOpenVideo(!OpenVideo)
-    }
-    const chooseUs = [
-        {
-            id: 1,
-            icon: <TbSettingsUp className='choose-us-icons' />,
-            title: "Extended Equipment Lifespan",
-            description: "Crafted with high-grade materials to ensure long-term durability and low maintenance in work environments."
-        },
-        {
-            id: 2,
-            icon: <FaHelmetSafety className='choose-us-icons' />,
-            title: "Enhanced Safety Compliance",
-            description: "All structures are fabricated to meet stringent workplace safety standards and building codes."
-        },
-        {
-            id: 3,
-            icon: <FaSortAmountUp className='choose-us-icons' />,
-            title: "Client-Centric Approach",
-            description: "Our workspace solutions are tailored for efficiency, comfort, and user satisfaction from design to delivery."
-        },
-        {
-            id: 4,
-            icon: <FaLeaf className='choose-us-icons' />,
-            title: "Eco-Friendly Fabrication",
-            description: "We use sustainable materials and processes to reduce environmental impact while maximizing performance."
-        }
-    ]
+  const [OpenVideo, setOpenVideo] = useState(false);
+  const handleOpenVideo = () => {
+    setOpenVideo(!OpenVideo);
+  };
+  const chooseUs = [
+    {
+      id: 1,
+      icon: <TbSettingsUp className="choose-us-icons" />,
+      title: "Extended Equipment Lifespan",
+      description:
+        "Crafted with high-grade materials to ensure long-term durability and low maintenance in work environments.",
+    },
+    {
+      id: 2,
+      icon: <FaHelmetSafety className="choose-us-icons" />,
+      title: "Enhanced Safety Compliance",
+      description:
+        "All structures are fabricated to meet stringent workplace safety standards and building codes.",
+    },
+    {
+      id: 3,
+      icon: <FaSortAmountUp className="choose-us-icons" />,
+      title: "Client-Centric Approach",
+      description:
+        "Our workspace solutions are tailored for efficiency, comfort, and user satisfaction from design to delivery.",
+    },
+    {
+      id: 4,
+      icon: <FaLeaf className="choose-us-icons" />,
+      title: "Eco-Friendly Fabrication",
+      description:
+        "We use sustainable materials and processes to reduce environmental impact while maximizing performance.",
+    },
+  ];
 
-    const weOfferList = [
-        {
-            id: 1,
-            icon: <MdFactory className='we-offer-icons' />,
-            title: "Fabrication",
-            description: "Our fabrication process ensures precision-built prefab office and workspace structures that are durable, efficient, and ready for rapid deployment."
-        },
-        {
-            id: 2,
-            icon: <HiOutlineClipboardDocumentList className='we-offer-icons' />,
-            title: "Procurement",
-            description: "Our streamlined procurement process ensures timely sourcing of high-quality materials for prefab office and workspace construction."
-        },
-        {
-            id: 3,
-            icon: <FaLayerGroup className='we-offer-icons' />,
-            title: "Engineering & Design",
-            description: "Our engineering and design process combines innovation with precision to create efficient, modern prefab office and workspace solutions."
-        },
-        {
-            id: 4,
-            icon: <GiCargoCrane className='we-offer-icons' />,
-            title: "Construction",
-            description: "Our construction process for prefab office and workspace buildings ensures fast, efficient, and high-quality results."
-        },
-        {
-            id: 5,
-            icon: <VscFileSubmodule className='we-offer-icons' />,
-            title: "Technical Consulting",
-            description: "Unlock smarter building outcomes with our expert technical consulting for prefab office and workspace projects."
-        },
-        {
-            id: 6,
-            icon: <MdEngineering className='we-offer-icons' />,
-            title: "Civil Engineering",
-            description: "Our civil engineering expertise ensures that every prefab office and workspace is structurally sound, efficient, and built to last."
-        },
-    ]
+  const weOfferList = [
+    {
+      id: 1,
+      icon: <MdFactory className="we-offer-icons" />,
+      title: "Fabrication",
+      description:
+        "Our fabrication process ensures precision-built prefab office and workspace structures that are durable, efficient, and ready for rapid deployment.",
+    },
+    {
+      id: 2,
+      icon: <HiOutlineClipboardDocumentList className="we-offer-icons" />,
+      title: "Procurement",
+      description:
+        "Our streamlined procurement process ensures timely sourcing of high-quality materials for prefab office and workspace construction.",
+    },
+    {
+      id: 3,
+      icon: <FaLayerGroup className="we-offer-icons" />,
+      title: "Engineering & Design",
+      description:
+        "Our engineering and design process combines innovation with precision to create efficient, modern prefab office and workspace solutions.",
+    },
+    {
+      id: 4,
+      icon: <GiCargoCrane className="we-offer-icons" />,
+      title: "Construction",
+      description:
+        "Our construction process for prefab office and workspace buildings ensures fast, efficient, and high-quality results.",
+    },
+    {
+      id: 5,
+      icon: <VscFileSubmodule className="we-offer-icons" />,
+      title: "Technical Consulting",
+      description:
+        "Unlock smarter building outcomes with our expert technical consulting for prefab office and workspace projects.",
+    },
+    {
+      id: 6,
+      icon: <MdEngineering className="we-offer-icons" />,
+      title: "Civil Engineering",
+      description:
+        "Our civil engineering expertise ensures that every prefab office and workspace is structurally sound, efficient, and built to last.",
+    },
+  ];
 
-    return (
-        <div>
-            <NavBarHead />
+  // const [currentWord, setCurrentWord] = useState(sliderImages[0].word);
 
-            {/* <DashboardSlider /> */}
+  // useEffect(() => {
+  //     const wordChangeInterval = setInterval(() => {
+  //         const nextWordIndex = (sliderImages.findIndex(item => item.word === currentWord) + 1) % sliderImages.length;
+  //         setCurrentWord(sliderImages[nextWordIndex].word);
+  //     }, 4000); // Change word every 4 seconds
 
-            <section className="performance-section">
-                <Container>
-                    <div className="video-section-container">
-                        <div className="video-section">
-                            <img src={ImagePath.Performance} alt="Video" loading="lazy" className='img-fluid' />
-                            <div className='play-button'>
-                                <div className="play-button-box" onClick={handleOpenVideo}>
-                                    <FaPlay className='play-button-icon' />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="performance-content-box">
-                            <IoLogoElectron className='performance-icons' />
-                            <h6>Precision Performance</h6>
-                            <p>Precision Performance ensures every detail is executed with accuracy, delivering consistent quality and reliability.</p>
-                        </div>
-                        <div className="performance-content-box">
-                            <TbSettingsBolt className='performance-icons' />
-                            <h6>Innovative Automation</h6>
-                            <p>Innovative automation streamlines processes through advanced technology, enhancing efficiency, accuracy, and productivity.</p>
-                        </div>
-                    </div>
-                </Container>
-            </section>
+  //     return () => clearInterval(wordChangeInterval);
+  // }, [currentWord]);
 
-            <WhoWeAre />
+  const settings = {
+    infinite: true, // Infinite loop
+    speed: 100, // Transition speed (ms)
+    slidesToShow: 1, // Show 1 image at a time
+    slidesToScroll: 1, // Scroll 1 image at a time
+    autoplay: true, // Autoplay images
+    autoplaySpeed: 3000, // Time between images
+    cssEase: "ease", // Transition ease effect
+    beforeChange: (current, next) => {
+      // Remove zoom effect before change
+      const images = document.querySelectorAll(".slider-image");
+      images.forEach((img) => {
+        img.classList.remove("zoom-in");
+      });
+    },
+    afterChange: (index) => {
+      // Add zoom effect to the newly active image
+      const activeImage = document.querySelectorAll(
+        ".slick-active .slider-image"
+      )[0];
+      if (activeImage) {
+        activeImage.classList.add("zoom-in");
+      }
+    },
+  };
 
-            <section className="we-do-section">
-                <Container>
-                    <div className="we-do-container">
-                        <div className="we-do-box">
-                            <GiMineTruck className='we-do-icons' />
-                            <hr />
-                            <h3>Experience & dependability</h3>
-                            <p>Prefab buildings offer unmatched experience and dependability through consistent quality, faster delivery, and long-term structural reliability.</p>
-                            <Button className='common-btn'>Learn More</Button>
-                        </div>
-                        <div className="we-do-box">
-                            <GiCargoCrane className='we-do-icons' />
-                            <hr />
-                            <h3>Licensing deals & scalability</h3>
-                            <p>Prefab buildings offer a fast, flexible, and scalable solution ideal for streamlined licensing deals and rapid business expansion.</p>
-                            <Button className='common-btn'>Learn More</Button>
-                        </div>
-                        <div className="we-do-box">
-                            <FaHelmetSafety className='we-do-icons' />
-                            <hr />
-                            <h3>Holistic & custom approach</h3>
-                            <p>Prefab buildings offer a holistic and custom approach, blending tailored design with efficient construction to meet unique project needs seamlessly.</p>
-                            <Button className='common-btn'>Learn More</Button>
-                        </div>
-                        <div className="we-do-box">
-                            <IoSettingsOutline className='we-do-icons' />
-                            <hr />
-                            <h3>Development & fabrication</h3>
-                            <p>Prefab building plays a vital role in modern development and fabrication by enabling faster construction, precision engineering, and cost-effective scalability.</p>
-                            <Button className='common-btn'>Learn More</Button>
-                        </div>
-                    </div>
-                </Container>
-            </section>
+  return (
+    <div>
+      <NavBarHead />
 
-            <OurVisionMission />
+      <div className="slider-container">
+        <Container>
+          <div className="slider-content-box">
+            <span>We provide cutting-edge, PEB Structure Solutions</span>
+            <h3>High-quality PEB and modular structures, ensuring</h3>
+            {/* <h5></h5> */}
+            <p>Explore our 3D Smart Building Planner, an intuitive digital tool that allows you to visualize, customize, and refine your prefabricated structure in real time. This immersive platform empowers you to experiment with layouts, optimize material usage, and perfect your design before execution—ensuring efficiency, cost-effectiveness, and sustainability from day one.</p>
+            <Button className="common-btn">Get Your Free Design & Estimate Consultation Now!</Button>
+          </div>
+        </Container>
+        <Slider {...settings}>
+          {sliderImages.map((item) => (
+            <div key={item.id} className="slider-img-box">
+              <img
+                src={item.image}
+                alt={`Slider ${item.id}`}
+                className="slider-image"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  transition: "transform 3s ease", // Smooth zoom transition
+                }}
+              />
+            </div>
+          ))}
+        </Slider>
+      </div>
 
-            <CounterSection />
+      {/* <DashboardSlider /> */}
 
-            <section className="why-choose-us">
-                <Container>
-                    <Row className='align-items-center'>
-                        <Col md={6}>
-                            <div className="why-choose-left-content-container">
-                                <h6>Why Choose Us</h6>
-                                <h4>Precision Fabrication for High-Performance Office & Workspace Solutions</h4>
-                                <p>At DIY PreFab, we focus on delivering top-tier prefab buildings that are expertly fabricated for functionality, speed, and style—enhancing productivity and professionalism.</p>
-                                <hr style={{ borderColor: "#001524", borderWidth: "1px" }} />
-                                <div className="choose-us-container">
-                                    {chooseUs.map((item, index) => (
-                                        <div className="why-choose-us-boxes">
-                                            <div className="box-icon">{item.icon}</div>
-                                            <div className="box-content">
-                                                <h4>{item.title}</h4>
-                                                <p>{item.description}</p>
-                                            </div>
-                                        </div>
-                                    ))}
-
-                                </div>
-                            </div>
-                        </Col>
-                        <Col md={6}>
-                            <Row>
-                                <Col md={6}>
-                                    <div className="why-choose-right-content-container">
-                                        <img src={ImagePath.ChooseUsVideo} alt="Industry-Video" className='img-fluid' />
-                                        <div className='play-button'>
-                                            <div className="play-button-box" onClick={handleOpenVideo}>
-                                                <FaPlay className='play-button-icon' />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </Col>
-                                <Col md={6}>
-                                    <div className="why-choose-right-content-container">
-                                        <img src={ImagePath.ChooseUsImg} alt="Industry-Video" className='img-fluid' />
-                                    </div>
-                                </Col>
-                            </Row>
-                        </Col>
-                    </Row>
-                </Container>
-            </section>
-
-            <section className="we-offer" style={{
-                backgroundImage: `url(${ImagePath.WeOffer})`, backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                padding: '60px 0',
-            }}>
-                <Container>
-                    <div className='we-offer-header'>
-                        <p>What WE oFFER</p>
-                        <h4>Engineering solutions for all industries</h4>
-                    </div>
-                    <div className="we-offer-container">
-                        {weOfferList.map((item, index) => (
-                            <div className="we-offer-box" key={index}>
-                                <div className="we-offer-inner">
-                                    <div className="we-offer-front">
-                                        <div className="we-offer-icon">{item.icon}</div>
-                                        <div className="we-offer-content">
-                                            <h4>{item.title}</h4>
-                                            <p>{item.description}</p>
-                                        </div>
-                                    </div>
-                                    <div className="we-offer-hover-box">
-                                        <div className="we-offer-hover-content">
-                                            <h4>{item.title}</h4>
-                                            <p>{item.description}</p>
-                                            <Button className="common-btn">Learn More</Button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        ))}
-                    </div>
-                </Container>
-            </section>
-
-            <section className="take-action" >
-                <img src={ImagePath.TakeAction} alt="take-action-background" className='img-fluid' />
-                <Container>
-                    <div className="take-action-container">
-                        <div className="take-action-box">
-                            <h3>Empower Your Future with Industrial Excellence, Seize the Opportunity to Engineer Innovation</h3>
-                            <p>We assist with structural planning, smart material choices, and seamless integration of building systems.</p>
-                            <Button className='btn common-btn'>TAKE ACTION NOW</Button>
-                        </div>
-                    </div>
-                </Container>
-            </section>
-
-            <TrustSlider />
-
-            <section className="send-message">
-                <Container>
-                    <Row className='align-items-center'>
-                        <Col md={12} lg={8}>
-                            <ContactForm />
-                        </Col>
-                    </Row>
-                </Container>
-            </section>
-
-            <WaveWrapper />
-
-
-            <Footer />
-            {OpenVideo ? (
-                <div className='play-video-container' onClick={handleOpenVideo}>
-                    <button className="close-video-btn">✖</button>
-                    <div className="video-wrapper">
-                        <iframe
-                            width="800"
-                            height="450"
-                            src="../src/assets/video\videoplayback.webm"
-                            title="Intro Video"
-                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                        ></iframe>
-                    </div>
+      <section section className="performance-section">
+        <Container>
+          <div className="video-section-container">
+            <div className="video-section">
+              <img
+                src={ImagePath.Performance}
+                alt="Video"
+                loading="lazy"
+                className="img-fluid"
+              />
+              <div className="play-button">
+                <div className="play-button-box" onClick={handleOpenVideo}>
+                  <FaPlay className="play-button-icon" />
                 </div>
-            ) : null}
-        </div>
-    )
-}
+              </div>
+            </div>
+            <div className="performance-content-box">
+              <IoLogoElectron className="performance-icons" />
+              <h6>Precision Performance</h6>
+              <p>
+                Precision Performance ensures every detail is executed with
+                accuracy, delivering consistent quality and reliability.
+              </p>
+            </div>
+            <div className="performance-content-box">
+              <TbSettingsBolt className="performance-icons" />
+              <h6>Innovative Automation</h6>
+              <p>
+                Innovative automation streamlines processes through advanced
+                technology, enhancing efficiency, accuracy, and productivity.
+              </p>
+            </div>
+          </div>
+        </Container>
+      </section>
 
-export default Dashboard
+      <WhoWeAre />
+
+      <section className="we-do-section">
+        <Container>
+          <div className="we-do-container">
+            <div className="we-do-box">
+              <GiMineTruck className="we-do-icons" />
+              <hr />
+              <h3>Experience & dependability</h3>
+              <p>
+                Prefab buildings offer unmatched experience and dependability
+                through consistent quality, faster delivery, and long-term
+                structural reliability.
+              </p>
+              <Button className="common-btn">Learn More</Button>
+            </div>
+            <div className="we-do-box">
+              <GiCargoCrane className="we-do-icons" />
+              <hr />
+              <h3>Licensing deals & scalability</h3>
+              <p>
+                Prefab buildings offer a fast, flexible, and scalable solution
+                ideal for streamlined licensing deals and rapid business
+                expansion.
+              </p>
+              <Button className="common-btn">Learn More</Button>
+            </div>
+            <div className="we-do-box">
+              <FaHelmetSafety className="we-do-icons" />
+              <hr />
+              <h3>Holistic & custom approach</h3>
+              <p>
+                Prefab buildings offer a holistic and custom approach, blending
+                tailored design with efficient construction to meet unique
+                project needs seamlessly.
+              </p>
+              <Button className="common-btn">Learn More</Button>
+            </div>
+            <div className="we-do-box">
+              <IoSettingsOutline className="we-do-icons" />
+              <hr />
+              <h3>Development & fabrication</h3>
+              <p>
+                Prefab building plays a vital role in modern development and
+                fabrication by enabling faster construction, precision
+                engineering, and cost-effective scalability.
+              </p>
+              <Button className="common-btn">Learn More</Button>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <OurVisionMission />
+
+      <CounterSection />
+
+      <section className="why-choose-us">
+        <Container>
+          <Row className="align-items-center">
+            <Col md={6}>
+              <div className="why-choose-left-content-container">
+                <h6>Why Choose Us</h6>
+                <h4>
+                  Precision Fabrication for High-Performance Office & Workspace
+                  Solutions
+                </h4>
+                <p>
+                  At DIY PreFab, we focus on delivering top-tier prefab
+                  buildings that are expertly fabricated for functionality,
+                  speed, and style—enhancing productivity and professionalism.
+                </p>
+                <hr style={{ borderColor: "#001524", borderWidth: "1px" }} />
+                <div className="choose-us-container">
+                  {chooseUs.map((item, index) => (
+                    <div className="why-choose-us-boxes">
+                      <div className="box-icon">{item.icon}</div>
+                      <div className="box-content">
+                        <h4>{item.title}</h4>
+                        <p>{item.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Col>
+            <Col md={6}>
+              <Row>
+                <Col md={6}>
+                  <div className="why-choose-right-content-container">
+                    <img
+                      src={ImagePath.ChooseUsVideo}
+                      alt="Industry-Video"
+                      className="img-fluid"
+                    />
+                    <div className="play-button">
+                      <div
+                        className="play-button-box"
+                        onClick={handleOpenVideo}
+                      >
+                        <FaPlay className="play-button-icon" />
+                      </div>
+                    </div>
+                  </div>
+                </Col>
+                <Col md={6}>
+                  <div className="why-choose-right-content-container">
+                    <img
+                      src={ImagePath.ChooseUsImg}
+                      alt="Industry-Video"
+                      className="img-fluid"
+                    />
+                  </div>
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+      <section
+        className="we-offer"
+        style={{
+          backgroundImage: `url(${ImagePath.Bg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          padding: "60px 0",
+          backgroundColor: "#a8dadc"
+        }}
+      >
+        <Container>
+          <div className="we-offer-header">
+            <p>What WE oFFER</p>
+            <h4>Engineering solutions for all industries</h4>
+          </div>
+          <div className="we-offer-container">
+            {weOfferList.map((item, index) => (
+              <div className="we-offer-box" key={index}>
+                <div className="we-offer-inner">
+                  <div className="we-offer-front">
+                    <div className="we-offer-icon">{item.icon}</div>
+                    <div className="we-offer-content">
+                      <h4>{item.title}</h4>
+                      <p>{item.description}</p>
+                    </div>
+                  </div>
+                  <div className="we-offer-hover-box">
+                    <div className="we-offer-hover-content">
+                      <h4>{item.title}</h4>
+                      <p>{item.description}</p>
+                      <Button className="common-btn">Learn More</Button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="take-action">
+        <img
+          src={ImagePath.TakeAction}
+          alt="take-action-background"
+          className="img-fluid"
+        />
+        <Container>
+          <div className="take-action-container">
+            <div className="take-action-box">
+              <h3>
+                Empower Your Future with Industrial Excellence, Seize the
+                Opportunity to Engineer Innovation
+              </h3>
+              <p>
+                We assist with structural planning, smart material choices, and
+                seamless integration of building systems.
+              </p>
+              <Button className="btn common-btn">TAKE ACTION NOW</Button>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <TrustSlider />
+
+      <section className="send-message">
+        <Container>
+          <Row className="align-items-center">
+            <Col md={12} lg={8}>
+              <ContactForm />
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+      <WaveWrapper />
+
+      <Footer />
+      {OpenVideo ? (
+        <div className="play-video-container" onClick={handleOpenVideo}>
+          <button className="close-video-btn">✖</button>
+          <div className="video-wrapper">
+            <iframe
+              width="800"
+              height="450"
+              src="../src/assets/video\videoplayback.webm"
+              title="Intro Video"
+              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+      ) : null}
+    </div>
+  );
+};
+
+export default Dashboard;
